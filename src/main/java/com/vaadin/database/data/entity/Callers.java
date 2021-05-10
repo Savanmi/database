@@ -3,13 +3,23 @@ import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Callers")
 public class Callers {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "caller_id")
     private int caller_id;
+
+    @Column(name = "telephone_exchange_id")
     private int telephone_exchange_id;
+
+    @Column(name = "client_id")
     private int client_id;
+
+    @Column(name = "is_blocked")
     private boolean is_blocked;
+
+    @Column(name = "has_long_distance_calls")
     private boolean has_long_distance_calls;
 
     public Callers() {}
