@@ -13,38 +13,37 @@ import java.util.Objects;
 @Table(name = "Connection_prices")
 public class Connection_prices {
     @Id
-    @Column(name = "Connection_price_ID")
-    private int id;
+    private int connection_price_ID;
 
-    @Column(name = "Price_name", nullable = false, unique = true)
-    private String name;
+    @Column(nullable = false, unique = true)
+    private String price_name;
 
-    @Column(name = "Price", nullable = false)
+    @Column(nullable = false)
     @Min(0)
     private int price;
 
     public Connection_prices(){}
 
     public Connection_prices(int id, String name, @Min(0) int price) {
-        this.id = id;
-        this.name = name;
+        this.connection_price_ID = id;
+        this.price_name = name;
         this.price = price;
     }
 
     public int getId() {
-        return id;
+        return connection_price_ID;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.connection_price_ID = id;
     }
 
     public String getName() {
-        return name;
+        return price_name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.price_name = name;
     }
 
     public int getPrice() {
@@ -58,8 +57,8 @@ public class Connection_prices {
     @Override
     public String toString() {
         return "Connection_prices{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id=" + connection_price_ID +
+                ", name='" + price_name + '\'' +
                 ", price=" + price +
                 '}';
     }
