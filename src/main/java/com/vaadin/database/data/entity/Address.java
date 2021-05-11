@@ -1,9 +1,6 @@
 package com.vaadin.database.data.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.util.Set;
 
@@ -32,6 +29,16 @@ public class Address {
 
     @OneToMany(mappedBy = "address_ID")
     private Set<Phones> phones;
+
+    @OneToMany(mappedBy = "address_ID")
+    private  Set<Public_phones> public_phones;
+
+    @OneToMany(mappedBy = "address_ID")
+    private Set<Connection_requests> connection_requests;
+
+    @OneToOne(mappedBy = "address_ID")
+    private Installing_possibilities installing_possibilities;
+
 
     public Address(){}
 

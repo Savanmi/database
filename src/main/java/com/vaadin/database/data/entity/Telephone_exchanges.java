@@ -18,6 +18,15 @@ public class Telephone_exchanges {
     @OneToMany(mappedBy = "telephone_exchange_id")
     private Set<Phone_numbers> phone_numbers;
 
+    @OneToMany(mappedBy = "telephone_exchange_ID")
+    private Set<Public_phones> public_phones;
+
+    @OneToMany(mappedBy = "telephone_exchange_ID")
+    private Set<Connection_requests> connection_requests;
+
+    @OneToOne(mappedBy = "telephone_exchange_ID")
+    private Installing_possibilities installing_possibilities;
+
     public Telephone_exchanges(){}
 
     public Telephone_exchanges(int telephone_exchange_id, String exchange_name, String exchange_type) {

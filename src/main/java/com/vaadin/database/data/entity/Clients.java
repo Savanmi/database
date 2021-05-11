@@ -2,12 +2,11 @@ package com.vaadin.database.data.entity;
 
 import org.hibernate.annotations.Check;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 public class Clients {
@@ -34,6 +33,9 @@ public class Clients {
     @Max(1)
     @Min(0)
     private int is_deadhead;
+
+    @OneToMany(mappedBy = "client_ID")
+    private Set<Connection_requests> connection_requests;
 
     public Clients(){}
 
