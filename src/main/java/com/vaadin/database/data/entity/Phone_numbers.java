@@ -1,9 +1,7 @@
 package com.vaadin.database.data.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Phone_numbers {
@@ -16,6 +14,9 @@ public class Phone_numbers {
     @ManyToOne
     @JoinColumn(name = "telephone_exchange_id", referencedColumnName = "telephone_exchange_id")
     private Telephone_exchanges telephone_exchange_id;
+
+    @OneToMany(mappedBy = "phone_number_ID")
+    private Set<Phones> phones;
 
     public Phone_numbers(){}
 

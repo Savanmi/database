@@ -1,5 +1,6 @@
 package com.vaadin.database.data.entity;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +17,16 @@ public class Callers {
     private int is_blocked;
 
     private boolean has_long_distance_calls;
+
+    @OneToMany(mappedBy = "caller_ID")
+    private Set<Phones> phones;
+
+    @OneToOne(mappedBy = "caller_ID")
+    private Balances balances;
+
+
+
+
 
     public Callers() {}
 

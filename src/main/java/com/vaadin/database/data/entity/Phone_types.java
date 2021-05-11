@@ -17,6 +17,9 @@ public class Phone_types {
     @OneToMany(mappedBy = "phone_number_type_ID")
     private Set<Subscription_fees> subscription_fees;
 
+    @OneToMany(mappedBy = "phone_type_ID")
+    private Set<Phones> phones;
+
     public Phone_types(){}
 
     public Phone_types(int phone_type_ID, String type_name) {
