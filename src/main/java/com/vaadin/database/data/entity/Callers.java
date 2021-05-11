@@ -7,24 +7,19 @@ import javax.persistence.*;
 public class Callers {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name = "caller_id")
     private int caller_id;
 
-    @Column(name = "telephone_exchange_id")
     private int telephone_exchange_id;
 
-    @Column(name = "client_id")
     private int client_id;
 
-    @Column(name = "is_blocked")
-    private boolean is_blocked;
+    private int is_blocked;
 
-    @Column(name = "has_long_distance_calls")
     private boolean has_long_distance_calls;
 
     public Callers() {}
 
-    public Callers(int caller_id, int telephone_exchange_id, int client_id, boolean is_blocked, boolean has_long_distance_calls) {
+    public Callers(int caller_id, int telephone_exchange_id, int client_id, int is_blocked, boolean has_long_distance_calls) {
         this.caller_id = caller_id;
         this.telephone_exchange_id = telephone_exchange_id;
         this.client_id = client_id;
@@ -56,11 +51,11 @@ public class Callers {
         this.client_id = client_id;
     }
 
-    public boolean isIs_blocked() {
+    public int isIs_blocked() {
         return is_blocked;
     }
 
-    public void setIs_blocked(boolean is_blocked) {
+    public void setIs_blocked(int is_blocked) {
         this.is_blocked = is_blocked;
     }
 

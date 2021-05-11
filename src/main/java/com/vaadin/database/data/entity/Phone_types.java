@@ -2,6 +2,9 @@ package com.vaadin.database.data.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import java.util.Set;
 
 @Entity
 public class Phone_types {
@@ -10,6 +13,9 @@ public class Phone_types {
     private int phone_type_ID;
 
     private String type_name;
+
+    @OneToMany(mappedBy = "phone_number_type_ID")
+    private Set<Subscription_fees> subscription_fees;
 
     public Phone_types(){}
 

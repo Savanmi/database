@@ -15,6 +15,8 @@ public class Telephone_exchanges {
 
     private String exchange_type;
 
+    @OneToMany(mappedBy = "telephone_exchange_id")
+    private Set<Phone_numbers> phone_numbers;
 
     public Telephone_exchanges(){}
 
