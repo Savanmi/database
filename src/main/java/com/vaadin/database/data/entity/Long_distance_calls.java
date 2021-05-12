@@ -24,7 +24,6 @@ public class Long_distance_calls {
     @Column(nullable = false)
     private LocalDate end_date;
 
-    @Min(0)
     private Integer call_price;
 
     public Long_distance_calls(){}

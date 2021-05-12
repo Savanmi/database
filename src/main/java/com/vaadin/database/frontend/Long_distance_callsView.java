@@ -24,6 +24,7 @@ public class Long_distance_callsView extends VerticalLayout {
         configGrid();
 
         add(new H3("Данные о междугородних звонках"));
+        add(grid);
         updatelist();
     }
 

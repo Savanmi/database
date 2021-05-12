@@ -106,16 +106,22 @@ public class Clients {
         this.is_deadhead = is_deadhead;
     }
 
+
     @Override
     public String toString() {
-        return "Clients{" +
-                "client_ID=" + client_ID +
-                ", first_name='" + first_name + '\'' +
-                ", second_name='" + second_name + '\'' +
-                ", middle_name='" + middle_name + '\'' +
-                ", gender=" + gender +
-                ", birth_date=" + birth_date +
-                ", is_deadhead=" + is_deadhead +
-                '}';
+        return String.format("%d ", this.client_ID);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Clients{" +
+//                "client_ID=" + client_ID +
+//                ", first_name='" + first_name + '\'' +
+//                ", second_name='" + second_name + '\'' +
+//                ", middle_name='" + middle_name + '\'' +
+//                ", gender=" + gender +
+//                ", birth_date=" + birth_date +
+//                ", is_deadhead=" + is_deadhead +
+//                '}';
+//    }
 }

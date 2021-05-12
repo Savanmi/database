@@ -21,7 +21,7 @@ public class Callers {
     @OneToMany(mappedBy = "caller_ID")
     private Set<Phones> phones;
 
-    @OneToOne(mappedBy = "caller_ID")
+    @OneToOne(fetch = FetchType.LAZY)
     private Balances balances;
 
 
@@ -80,14 +80,19 @@ public class Callers {
 
     @Override
     public String toString() {
-        return "Callers{" +
-                "caller_id=" + caller_id +
-                ", telephone_exchange_id=" + telephone_exchange_id +
-                ", client_id=" + client_id +
-                ", is_blocked=" + is_blocked +
-                ", has_long_distance_calls=" + has_long_distance_calls +
-                '}';
+        return String.format("%d ", this.caller_id);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Callers{" +
+//                "caller_id=" + caller_id +
+//                ", telephone_exchange_id=" + telephone_exchange_id +
+//                ", client_id=" + client_id +
+//                ", is_blocked=" + is_blocked +
+//                ", has_long_distance_calls=" + has_long_distance_calls +
+//                '}';
+//    }
 
     @Override
     public boolean equals(Object o) {

@@ -81,14 +81,19 @@ public class Phones {
         this.address_ID = address_ID;
     }
 
+
     @Override
     public String toString() {
-        return "Phones{" +
-                "phone_ID=" + phone_ID +
-                ", phone_number_ID=" + phone_number_ID +
-                ", phone_type_ID=" + phone_type_ID +
-                ", caller_ID=" + caller_ID +
-                ", address_ID=" + address_ID +
-                '}';
+        return String.format("%d ", this.phone_ID);
     }
+//    @Override
+//    public String toString() {
+//        return "Phones{" +
+//                "phone_ID=" + phone_ID +
+//                ", phone_number_ID=" + phone_number_ID +
+//                ", phone_type_ID=" + phone_type_ID +
+//                ", caller_ID=" + caller_ID +
+//                ", address_ID=" + address_ID +
+//                '}';
+//    }
 }

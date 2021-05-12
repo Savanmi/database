@@ -63,10 +63,15 @@ public class Telephone_exchanges {
 
     @Override
     public String toString() {
-        return "Telephone_exchanges{" +
-                "telephone_exchange_id=" + telephone_exchange_id +
-                ", exchange_name='" + exchange_name + '\'' +
-                ", exchange_type='" + exchange_type + '\'' +
-                '}';
+        return String.format("%d ", this.telephone_exchange_id);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Telephone_exchanges{" +
+//                "telephone_exchange_id=" + telephone_exchange_id +
+//                ", exchange_name='" + exchange_name + '\'' +
+//                ", exchange_type='" + exchange_type + '\'' +
+//                '}';
+//    }
 }

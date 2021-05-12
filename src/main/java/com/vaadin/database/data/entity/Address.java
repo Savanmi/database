@@ -37,7 +37,7 @@ public class Address {
     @OneToMany(mappedBy = "address_ID")
     private Set<Connection_requests> connection_requests;
 
-    @OneToOne(mappedBy = "address_ID")
+    @OneToOne(fetch = FetchType.LAZY)
     private Installing_possibilities installing_possibilities;
 
 
@@ -102,13 +102,18 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "address_ID=" + address_ID +
-                ", Zip_code=" + Zip_code +
-                ", city='" + city + '\'' +
-                ", region='" + region + '\'' +
-                ", street='" + street + '\'' +
-                ", building_number=" + building_number +
-                '}';
+        return String.format("%d ", this.address_ID);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Address{" +
+//                "address_ID=" + address_ID +
+//                ", Zip_code=" + Zip_code +
+//                ", city='" + city + '\'' +
+//                ", region='" + region + '\'' +
+//                ", street='" + street + '\'' +
+//                ", building_number=" + building_number +
+//                '}';
+//    }
 }

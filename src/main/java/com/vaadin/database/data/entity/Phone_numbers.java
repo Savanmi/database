@@ -51,12 +51,17 @@ public class Phone_numbers {
         this.telephone_exchange_id = telephone_exchange_id;
     }
 
+
     @Override
     public String toString() {
-        return "Phone_numbers{" +
-                "phone_number_ID=" + phone_number_ID +
-                ", phone_number='" + phone_number + '\'' +
-                ", telephone_exchange_id=" + telephone_exchange_id +
-                '}';
+        return String.format("%d ", this.phone_number_ID);
     }
+
+//    public String toString() {
+//        return "Phone_numbers{" +
+//                "phone_number_ID=" + phone_number_ID +
+//                ", phone_number='" + phone_number + '\'' +
+//                ", telephone_exchange_id=" + telephone_exchange_id +
+//                '}';
+//    }
 }
