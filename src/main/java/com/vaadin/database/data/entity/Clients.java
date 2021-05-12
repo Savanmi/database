@@ -12,6 +12,7 @@ import java.util.Set;
 public class Clients {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int client_ID;
 
     @Column(nullable = false)

@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Connection_requests {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int connection_request_ID;
 
     @ManyToOne

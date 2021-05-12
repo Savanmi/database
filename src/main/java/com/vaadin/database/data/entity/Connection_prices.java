@@ -2,17 +2,16 @@ package com.vaadin.database.data.entity;
 
 import org.springframework.data.repository.cdi.Eager;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.util.Objects;
 
 @Entity
 @Table(name = "Connection_prices")
 public class Connection_prices {
+
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int connection_price_ID;
 
     @Column(nullable = false, unique = true)

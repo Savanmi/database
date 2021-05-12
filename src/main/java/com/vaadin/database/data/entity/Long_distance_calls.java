@@ -7,6 +7,7 @@ import java.time.LocalDate;
 @Entity
 public class Long_distance_calls {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int long_distance_call_ID;
 
     @OneToOne

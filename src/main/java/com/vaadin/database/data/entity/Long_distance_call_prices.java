@@ -1,14 +1,13 @@
 package com.vaadin.database.data.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 
 @Entity
 public class Long_distance_call_prices {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int Long_distance_call_price_ID;
 
     @Column(nullable = false, unique = true)

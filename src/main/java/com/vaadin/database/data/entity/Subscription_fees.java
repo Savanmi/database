@@ -11,6 +11,7 @@ import javax.validation.constraints.Min;
 public class Subscription_fees {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int subscription_fee_ID;
 
     @ManyToOne
@@ -81,14 +82,18 @@ public class Subscription_fees {
         this.subscription_fee = subscription_fee;
     }
 
-    @Override
-    public String toString() {
-        return "Subscription_fees{" +
-                "subscription_fee_ID=" + subscription_fee_ID +
-                ", phone_number_type_ID=" + phone_number_type_ID +
-                ", is_deadhead=" + is_deadhead +
-                ", has_long_distance_calls=" + has_long_distance_calls +
-                ", subscription_fee=" + subscription_fee +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Subscription_fees{" +
+//                "subscription_fee_ID=" + subscription_fee_ID +
+//                ", phone_number_type_ID=" + phone_number_type_ID +
+//                ", is_deadhead=" + is_deadhead +
+//                ", has_long_distance_calls=" + has_long_distance_calls +
+//                ", subscription_fee=" + subscription_fee +
+//                '}';
+//    }
+
+
+
+
 }

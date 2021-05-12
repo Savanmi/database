@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Phones {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int phone_ID;
 
     @ManyToOne

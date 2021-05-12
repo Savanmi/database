@@ -1,21 +1,20 @@
 package com.vaadin.database.data.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Phone_types {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int phone_type_ID;
 
     private String type_name;
 
     @OneToMany(mappedBy = "phone_number_type_ID")
-    private Set<Subscription_fees> subscription_fees;
+    private Set<Subscription_fees> subscription_fees = new HashSet<>();
 
     @OneToMany(mappedBy = "phone_type_ID")
     private Set<Phones> phones;
@@ -43,11 +42,16 @@ public class Phone_types {
         this.type_name = type_name;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Phone_types{" +
+//                "phone_type_ID=" + phone_type_ID +
+//                ", type_name='" + type_name + '\'' +
+//                '}';
+//    }
+
     @Override
     public String toString() {
-        return "Phone_types{" +
-                "phone_type_ID=" + phone_type_ID +
-                ", type_name='" + type_name + '\'' +
-                '}';
+        return String.format("%d ", this.phone_type_ID);
     }
 }

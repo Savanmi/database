@@ -8,7 +8,9 @@ import java.util.Set;
 @Entity
 @Table(name = "telephone_exchanges")
 public class Telephone_exchanges {
+
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int telephone_exchange_id;
 
     private String exchange_name;

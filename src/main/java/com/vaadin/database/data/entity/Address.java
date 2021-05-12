@@ -8,6 +8,7 @@ import java.util.Set;
 public class Address {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int address_ID;
 
     @Min(1)

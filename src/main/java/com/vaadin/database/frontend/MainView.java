@@ -1,27 +1,24 @@
-package com.vaadin.database.views;
+package com.vaadin.database.frontend;
 
-import com.vaadin.database.data.entity.Callers;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.data.renderer.TemplateRenderer;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.component.contextmenu.MenuItem;
+import com.vaadin.flow.component.menubar.MenuBar;
+import com.vaadin.flow.router.RouterLink;
 
 @Route("")
 public class MainView extends VerticalLayout {
 
-    Grid<Callers> grid = new Grid<>(Callers.class);
+    private MenuBar menuBar = new MenuBar();
 
     public MainView() {
 
-        addClassName("list-view");
-        setSizeFull();
 
-        add(grid);
+        MenuItem fees = menuBar.addItem("Fees");
 
+        fees.getSubMenu().addItem(new RouterLink("Fees", Subscription_feeView.class));
+
+        add(menuBar);
 
 
 
@@ -57,5 +54,11 @@ public class MainView extends VerticalLayout {
 //        // Add Grid to view
 //        add(movies);
     }
+
+//
+//
+//
+//
+//    }
 
 }

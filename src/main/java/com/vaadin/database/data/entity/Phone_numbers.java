@@ -7,6 +7,7 @@ import java.util.Set;
 public class Phone_numbers {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int phone_number_ID;
 
     private String phone_number;

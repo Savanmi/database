@@ -1,14 +1,12 @@
 package com.vaadin.database.data.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Public_phones {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int public_phone_ID;
 
     @ManyToOne

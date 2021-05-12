@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class Balances{
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int balance_id;
 
     @OneToOne()
