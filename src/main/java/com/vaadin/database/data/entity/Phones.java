@@ -9,11 +9,11 @@ public class Phones {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int phone_ID;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "phone_number_ID", referencedColumnName = "phone_number_ID")
     private Phone_numbers phone_number_ID;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "phone_type_ID", referencedColumnName = "phone_type_ID")
     private Phone_types phone_type_ID;
 
@@ -25,10 +25,10 @@ public class Phones {
     @JoinColumn(name = "address_ID", referencedColumnName = "address_ID")
     private Address address_ID;
 
-    @OneToOne(mappedBy = "source_phone_ID")
+    @OneToOne(fetch = FetchType.LAZY)
     private Long_distance_calls long_distance_calls;
 
-    @OneToOne(mappedBy = "destination_phone_ID")
+    @OneToOne(fetch = FetchType.LAZY)
     private Long_distance_calls distance_calls;
 
     public Phones(){}

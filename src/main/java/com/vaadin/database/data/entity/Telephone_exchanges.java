@@ -26,7 +26,7 @@ public class Telephone_exchanges {
     @OneToMany(mappedBy = "telephone_exchange_ID")
     private Set<Connection_requests> connection_requests;
 
-    @OneToOne(mappedBy = "telephone_exchange_ID")
+    @OneToOne(fetch = FetchType.LAZY)
     private Installing_possibilities installing_possibilities;
 
     public Telephone_exchanges(){}

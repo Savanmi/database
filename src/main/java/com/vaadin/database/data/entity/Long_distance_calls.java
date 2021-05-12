@@ -25,12 +25,11 @@ public class Long_distance_calls {
     private LocalDate end_date;
 
     @Min(0)
-    @Column(nullable = false)
-    private long call_price;
+    private Integer call_price;
 
     public Long_distance_calls(){}
 
-    public Long_distance_calls(int long_distance_call_ID, Phones source_phone_ID, Phones destination_phone_ID, LocalDate start_date, LocalDate end_date, @Min(0) long call_price) {
+    public Long_distance_calls(int long_distance_call_ID, Phones source_phone_ID, Phones destination_phone_ID, LocalDate start_date, LocalDate end_date, @Min(0) Integer call_price) {
         this.long_distance_call_ID = long_distance_call_ID;
         this.source_phone_ID = source_phone_ID;
         this.destination_phone_ID = destination_phone_ID;
@@ -83,7 +82,7 @@ public class Long_distance_calls {
         return call_price;
     }
 
-    public void setCall_price(long call_price) {
+    public void setCall_price(Integer call_price) {
         this.call_price = call_price;
     }
 

@@ -16,8 +16,8 @@ public class Phone_numbers {
     @JoinColumn(name = "telephone_exchange_id", referencedColumnName = "telephone_exchange_id")
     private Telephone_exchanges telephone_exchange_id;
 
-    @OneToMany(mappedBy = "phone_number_ID")
-    private Set<Phones> phones;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Phones phones;
 
     public Phone_numbers(){}
 

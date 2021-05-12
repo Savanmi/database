@@ -16,8 +16,8 @@ public class Phone_types {
     @OneToMany(mappedBy = "phone_number_type_ID")
     private Set<Subscription_fees> subscription_fees = new HashSet<>();
 
-    @OneToMany(mappedBy = "phone_type_ID")
-    private Set<Phones> phones;
+    @OneToOne(fetch = FetchType.LAZY)
+    private Phones phones;
 
     public Phone_types(){}
 
