@@ -20,6 +20,16 @@ public class AddressService {
         return (List<Address>) addressRepository.findAll();
     }
 
+    public List<Address> findAll(String filterText) {
+        if (filterText == null || filterText.isEmpty()) {
+        return (List<Address>) addressRepository.findAll();
+        } else{
+            return  addressRepository.search(filterText);
+
+        }
+    }
+
+
     public long count() {
         return addressRepository.count();
     }

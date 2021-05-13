@@ -20,6 +20,14 @@ public class ClientsService {
         return (List<Clients>) clientsRepository.findAll();
     }
 
+    public List<Clients> findAll(String filter) {
+        if (filter == null || filter.isEmpty()){
+            return (List<Clients>) clientsRepository.findAll();
+        } else{
+        return  clientsRepository.search(filter);
+        }
+    }
+
     public long count() {
         return clientsRepository.count();
     }

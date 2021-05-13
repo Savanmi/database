@@ -7,6 +7,8 @@ import com.vaadin.database.data.service.Subscription_feesService;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
 
 @Route("addresses")
@@ -14,6 +16,7 @@ public class AddressView extends VerticalLayout {
 
     private AddressService addressService;
     Grid<Address> grid = new Grid<>(Address.class);
+    TextField filterText = new TextField();
 
     public  AddressView (AddressService addressService){
 
@@ -22,14 +25,22 @@ public class AddressView extends VerticalLayout {
         setSizeFull();
 
         configGrid();
+        configFilter();
 
         add(new H3("Данные об адресах"));
-        add(grid);
+        add(filterText,grid);
         updatelist();
     }
 
+    private void configFilter() {
+        filterText.setPlaceholder("Фильтр по адресу");
+        filterText.setClearButtonVisible(true);
+        filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.addValueChangeListener(e->updatelist());
+    }
+
     private void updatelist() {
-        grid.setItems((addressService.findAll()));
+        grid.setItems((addressService.findAll(filterText.getValue())));
     }
 
     private void configGrid() {
