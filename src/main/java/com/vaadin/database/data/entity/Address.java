@@ -8,7 +8,8 @@ import java.util.Set;
 public class Address {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(nullable = false)
     private int address_ID;
 
     @Min(1)
@@ -37,7 +38,7 @@ public class Address {
     @OneToMany(mappedBy = "address_ID")
     private Set<Connection_requests> connection_requests;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Installing_possibilities installing_possibilities;
 
 

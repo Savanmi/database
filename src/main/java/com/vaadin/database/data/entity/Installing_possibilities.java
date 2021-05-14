@@ -7,9 +7,9 @@ public class Installing_possibilities {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int installing_possibilities_ID;
+    private int INSTALLING_POSSIBILITY_ID;
 
-    @OneToOne
+    @OneToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "address_ID", referencedColumnName = "address_ID")
     private Address address_ID;
 
@@ -21,17 +21,17 @@ public class Installing_possibilities {
     public Installing_possibilities(){}
 
     public Installing_possibilities(int installing_possibilities_ID, Address address_ID, Telephone_exchanges telephone_exchange_ID) {
-        this.installing_possibilities_ID = installing_possibilities_ID;
+        this.INSTALLING_POSSIBILITY_ID = installing_possibilities_ID;
         this.address_ID = address_ID;
         this.telephone_exchange_ID = telephone_exchange_ID;
     }
 
-    public int getInstalling_possibilities_ID() {
-        return installing_possibilities_ID;
+    public int getINSTALLING_POSSIBILITY_ID() {
+        return INSTALLING_POSSIBILITY_ID;
     }
 
-    public void setInstalling_possibilities_ID(int installing_possibilities_ID) {
-        this.installing_possibilities_ID = installing_possibilities_ID;
+    public void setINSTALLING_POSSIBILITY_ID(int installing_possibilities_ID) {
+        this.INSTALLING_POSSIBILITY_ID = installing_possibilities_ID;
     }
 
     public Address getAddress_ID() {
@@ -53,7 +53,7 @@ public class Installing_possibilities {
     @Override
     public String toString() {
         return "Installing_possibilities{" +
-                "installing_possibilities_ID=" + installing_possibilities_ID +
+                "installing_possibilities_ID=" + INSTALLING_POSSIBILITY_ID +
                 ", address_ID=" + address_ID +
                 ", telephone_exchange_ID=" + telephone_exchange_ID +
                 '}';
