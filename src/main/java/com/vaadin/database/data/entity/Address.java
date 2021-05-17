@@ -8,7 +8,8 @@ import java.util.Set;
 public class Address {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @SequenceGenerator(name = "address_generator", sequenceName = "address_seq", initialValue = 60)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_generator")
     @Column(nullable = false)
     private int address_ID;
 

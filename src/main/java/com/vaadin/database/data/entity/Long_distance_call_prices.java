@@ -7,7 +7,8 @@ import javax.validation.constraints.Min;
 public class Long_distance_call_prices {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @SequenceGenerator(name = "ldcPrices_generator", sequenceName = "ldcPrices_seq", initialValue = 3)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ldcPrices_generator")
     private int Long_distance_call_price_ID;
 
     @Column(nullable = false, unique = true)

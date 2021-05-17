@@ -8,7 +8,8 @@ import java.util.Set;
 public class Phone_types {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "phoneTypes_generator", sequenceName = "phoneTypes_seq", initialValue = 5)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phoneTypes_generator")
     private int phone_type_ID;
 
     private String type_name;

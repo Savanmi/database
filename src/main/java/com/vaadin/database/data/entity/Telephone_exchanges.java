@@ -10,7 +10,8 @@ import java.util.Set;
 public class Telephone_exchanges {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "Exchanges_generator", sequenceName = "Exchanges_seq", initialValue = 5)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Exchanges_generator")
     private int telephone_exchange_id;
 
     private String exchange_name;

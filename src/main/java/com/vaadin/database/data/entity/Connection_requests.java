@@ -8,7 +8,8 @@ import java.time.LocalDate;
 public class Connection_requests {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "connectionRequests_generator", sequenceName = "connectionRequests_seq", initialValue = 15)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "connectionRequests_generator")
     private int connection_request_ID;
 
     @ManyToOne

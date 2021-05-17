@@ -11,7 +11,8 @@ import javax.validation.constraints.Min;
 public class Subscription_fees {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "subscriptionFees_generator", sequenceName = "subscriptionFees_seq", initialValue = 15)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "subscriptionFees_generator")
     private int subscription_fee_ID;
 
     @ManyToOne

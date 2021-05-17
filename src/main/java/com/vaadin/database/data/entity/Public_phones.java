@@ -6,7 +6,8 @@ import javax.persistence.*;
 public class Public_phones {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "publicPhones_generator", sequenceName = "publicPhones_seq", initialValue = 15)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "publicPhones_generator")
     private int public_phone_ID;
 
     @ManyToOne

@@ -6,7 +6,8 @@ import javax.persistence.*;
 public class Installing_possibilities {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "installingPossibilities_generator", sequenceName = "installingPossibilities_seq", initialValue = 30)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "installingPossibilities_generator")
     private int INSTALLING_POSSIBILITY_ID;
 
     @OneToOne (cascade = CascadeType.ALL)

@@ -7,7 +7,8 @@ import java.util.Set;
 public class Phone_numbers {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "phoneNumbers_generator", sequenceName = "phoneNumbers_seq", initialValue = 15)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phoneNumbers_generator")
     private int phone_number_ID;
 
     private String phone_number;

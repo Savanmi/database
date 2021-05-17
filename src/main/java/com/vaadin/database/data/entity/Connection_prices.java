@@ -11,7 +11,8 @@ import java.util.Objects;
 public class Connection_prices {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "connectionPrices_generator", sequenceName = "connectionPrices_seq", initialValue = 4)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "connectionPrices_generator")
     private int connection_price_ID;
 
     @Column(nullable = false, unique = true)

@@ -7,7 +7,8 @@ import java.time.LocalDate;
 @Entity
 public class Long_distance_calls {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @SequenceGenerator(name = "ldc_generator", sequenceName = "ldc_seq", initialValue = 15)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ldc_generator")
     private int long_distance_call_ID;
 
     @OneToOne
