@@ -84,6 +84,15 @@ public class AddressView extends VerticalLayout {
         removeClassName("editing");
     }
 
+    private void editAddress(Address address) {
+        if (address == null) {
+            closeEditor();
+        } else {
+            form.setAddress(address);
+            form.setVisible(true);
+            form.setClassName("editing");
+        }
+    }
 
     private void updatelist() {
         grid.setItems((addressService.findAll(filterText.getValue())));
@@ -100,13 +109,5 @@ public class AddressView extends VerticalLayout {
 
     }
 
-    private void editAddress(Address address) {
-        if (address == null) {
-            closeEditor();
-        } else {
-            form.setAddress(address);
-            form.setVisible(true);
-            form.setClassName("editing");
-        }
-    }
+
 }

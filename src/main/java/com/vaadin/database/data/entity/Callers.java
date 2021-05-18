@@ -9,7 +9,7 @@ public class Callers {
     @Id
     @SequenceGenerator(name = "callers_generator", sequenceName = "callers_seq", initialValue = 15)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "callers_generator")
-    private int caller_id;
+    private Integer caller_id;
 
     private int telephone_exchange_id;
 
@@ -106,5 +106,9 @@ public class Callers {
     @Override
     public int hashCode() {
         return Objects.hash(getCaller_id(), getTelephone_exchange_id(), getClient_id(), isIs_blocked(), isHas_long_distance_calls());
+    }
+
+    public String getIdStr(){
+        return caller_id.toString();
     }
 }
