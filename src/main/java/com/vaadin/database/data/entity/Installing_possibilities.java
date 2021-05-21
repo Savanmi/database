@@ -10,7 +10,7 @@ public class Installing_possibilities {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "installingPossibilities_generator")
     private int INSTALLING_POSSIBILITY_ID;
 
-    @OneToOne (cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "address_ID", referencedColumnName = "address_ID")
     private Address address_ID;
 

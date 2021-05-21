@@ -16,11 +16,11 @@ public class Long_distance_call_prices {
 
     @Column(nullable = false)
     @Min(0)
-    private long Price_per_minute;
+    private int Price_per_minute;
 
     public Long_distance_call_prices(){}
 
-    public Long_distance_call_prices(int long_distance_call_price_ID, String price_name, @Min(0) long price_per_minute) {
+    public Long_distance_call_prices(int long_distance_call_price_ID, String price_name, @Min(0) int price_per_minute) {
         Long_distance_call_price_ID = long_distance_call_price_ID;
         Price_name = price_name;
         Price_per_minute = price_per_minute;
@@ -42,11 +42,11 @@ public class Long_distance_call_prices {
         Price_name = price_name;
     }
 
-    public long getPrice_per_minute() {
+    public int getPrice_per_minute() {
         return Price_per_minute;
     }
 
-    public void setPrice_per_minute(long price_per_minute) {
+    public void setPrice_per_minute(int price_per_minute) {
         Price_per_minute = price_per_minute;
     }
 

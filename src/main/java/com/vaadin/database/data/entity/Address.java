@@ -54,11 +54,11 @@ public class Address {
         this.building_number = building_number;
     }
 
-    public int getAddress_ID() {
+    public Integer getAddress_ID() {
         return address_ID;
     }
 
-    public void setAddress_ID(int address_ID) {
+    public void setAddress_ID(Integer address_ID) {
         this.address_ID = address_ID;
     }
 
