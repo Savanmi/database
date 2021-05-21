@@ -15,8 +15,7 @@ public class Connection_prices {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "connectionPrices_generator")
     private int connection_price_ID;
 
-    @Column(nullable = false, unique = true)
-    private String price_name;
+    private String Price_name;
 
     @Column(nullable = false)
     @Min(0)
@@ -24,26 +23,20 @@ public class Connection_prices {
 
     public Connection_prices(){}
 
-    public Connection_prices(int id, String name, @Min(0) int price) {
-        this.connection_price_ID = id;
-        this.price_name = name;
-        this.price = price;
-    }
-
-    public int getId() {
+    public int getConnection_price_ID() {
         return connection_price_ID;
     }
 
-    public void setId(int id) {
-        this.connection_price_ID = id;
+    public void setConnection_price_ID(int connection_price_ID) {
+        this.connection_price_ID = connection_price_ID;
     }
 
-    public String getName() {
-        return price_name;
+    public String getPrice_name() {
+        return Price_name;
     }
 
-    public void setName(String name) {
-        this.price_name = name;
+    public void setPrice_name(String price_name) {
+        Price_name = price_name;
     }
 
     public int getPrice() {
@@ -54,25 +47,21 @@ public class Connection_prices {
         this.price = price;
     }
 
+    public Connection_prices(int id, String name, @Min(0) int price) {
+        this.connection_price_ID = id;
+        this.Price_name = name;
+        this.price = price;
+    }
+
+
+
     @Override
     public String toString() {
         return "Connection_prices{" +
                 "id=" + connection_price_ID +
-                ", name='" + price_name + '\'' +
+                ", name='" + Price_name + '\'' +
                 ", price=" + price +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Connection_prices)) return false;
-        Connection_prices that = (Connection_prices) o;
-        return getId() == that.getId() && getPrice() == that.getPrice() && Objects.equals(getName(), that.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getName(), getPrice());
-    }
 }

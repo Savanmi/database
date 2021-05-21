@@ -21,7 +21,6 @@ public class BalancesView extends VerticalLayout {
 
     private BalancesService balancesService;
     Grid<Balances> grid = new Grid<>(Balances.class);
-    TextField filterText = new TextField();
 
 
     private BalanceForm form;

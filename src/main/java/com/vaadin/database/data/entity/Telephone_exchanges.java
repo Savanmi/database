@@ -12,7 +12,7 @@ public class Telephone_exchanges {
     @Id
     @SequenceGenerator(name = "Exchanges_generator", sequenceName = "Exchanges_seq", initialValue = 5)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Exchanges_generator")
-    private int telephone_exchange_id;
+    private Integer telephone_exchange_id;
 
     private String exchange_name;
 
@@ -29,6 +29,9 @@ public class Telephone_exchanges {
 
     @OneToOne(fetch = FetchType.LAZY)
     private Installing_possibilities installing_possibilities;
+
+    @OneToMany(mappedBy = "telephone_exchange_ID")
+    private Set<Callers> callers;
 
     public Telephone_exchanges(){}
 
@@ -65,6 +68,10 @@ public class Telephone_exchanges {
     @Override
     public String toString() {
         return String.format("%d ", this.telephone_exchange_id);
+    }
+
+    public String getIdStr(){
+        return telephone_exchange_id.toString();
     }
 
 //    @Override

@@ -11,7 +11,7 @@ public class Address {
     @SequenceGenerator(name = "address_generator", sequenceName = "address_seq", initialValue = 60)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_generator")
     @Column(nullable = false)
-    private int address_ID;
+    private Integer address_ID;
 
     @Min(1)
     @Column(nullable = false)
@@ -106,6 +106,11 @@ public class Address {
     public String toString() {
         return String.format("%d ", this.address_ID);
     }
+
+    public String getIdStr(){
+        return address_ID.toString();
+    }
+
 
 //    @Override
 //    public String toString() {

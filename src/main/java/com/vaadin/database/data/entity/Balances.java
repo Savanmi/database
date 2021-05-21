@@ -9,7 +9,7 @@ import java.time.LocalDate;
 public class Balances{
 
     @Id
-    @SequenceGenerator(name = "balances_generator", sequenceName = "balances_seq", initialValue = 15)
+    @SequenceGenerator(name = "balances_generator", sequenceName = "balances_seq", initialValue = 10)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "balances_generator")
     private int balance_id;
 

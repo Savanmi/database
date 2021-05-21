@@ -13,8 +13,8 @@ public class Clients {
 
     @Id
     @SequenceGenerator(name = "clients_generator", sequenceName = "clients_seq", initialValue = 15)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "clients_generator")
-    private int client_ID;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "clients_generator")
+    private Integer client_ID;
 
     @Column(nullable = false)
     private String first_name;
@@ -26,22 +26,23 @@ public class Clients {
     private String middle_name;
 
     @Column(nullable = false)
-    private Character gender;
+    private String gender;
 
     @Column(nullable = false)
     private LocalDate birth_date;
 
     @Column(nullable = false)
-    @Max(1)
-    @Min(0)
-    private int is_deadhead;
+    private boolean is_deadhead;
 
     @OneToMany(mappedBy = "client_ID")
     private Set<Connection_requests> connection_requests;
 
+    @OneToMany(mappedBy = "client_id")
+    private Set<Callers> callers;
+
     public Clients(){}
 
-    public Clients(int client_ID, String first_name, String second_name, String middle_name, Character gender, LocalDate birth_date, @Max(1) @Min(0) int is_deadhead) {
+    public Clients(int client_ID, String first_name, String second_name, String middle_name, String gender, LocalDate birth_date, boolean is_deadhead) {
         this.client_ID = client_ID;
         this.first_name = first_name;
         this.second_name = second_name;
@@ -51,7 +52,10 @@ public class Clients {
         this.is_deadhead = is_deadhead;
     }
 
-    public int getClient_ID() {
+    public String getIdStr(){
+        return client_ID.toString();
+    }
+    public Integer getClient_ID() {
         return client_ID;
     }
 
@@ -83,11 +87,11 @@ public class Clients {
         this.middle_name = middle_name;
     }
 
-    public Character getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Character gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -99,11 +103,11 @@ public class Clients {
         this.birth_date = birth_date;
     }
 
-    public int getIs_deadhead() {
+    public boolean getIs_deadhead() {
         return is_deadhead;
     }
 
-    public void setIs_deadhead(int is_deadhead) {
+    public void setIs_deadhead(boolean is_deadhead) {
         this.is_deadhead = is_deadhead;
     }
 
