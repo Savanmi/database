@@ -8,7 +8,9 @@ public class Phones {
     @Id
     @SequenceGenerator(name = "phones_generator", sequenceName = "phones_seq", initialValue = 15)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phones_generator")
-    private int phone_ID;
+    private Integer phone_ID;
+
+    private String Apartment_number;
 
     @OneToOne
     @JoinColumn(name = "phone_number_ID", referencedColumnName = "phone_number_ID")
@@ -34,15 +36,30 @@ public class Phones {
 
     public Phones(){}
 
-    public Phones(int phone_ID, Phone_numbers phone_number_ID, Phone_types phone_type_ID, Callers caller_ID, Address address_ID) {
+    public Phones(Integer phone_ID, String apartment_number, Phone_numbers phone_number_ID, Phone_types phone_type_ID, Callers caller_ID, Address address_ID, Long_distance_calls long_distance_calls, Long_distance_calls distance_calls) {
         this.phone_ID = phone_ID;
+        Apartment_number = apartment_number;
         this.phone_number_ID = phone_number_ID;
         this.phone_type_ID = phone_type_ID;
         this.caller_ID = caller_ID;
         this.address_ID = address_ID;
+        this.long_distance_calls = long_distance_calls;
+        this.distance_calls = distance_calls;
     }
 
-    public int getPhone_ID() {
+    public void setPhone_ID(Integer phone_ID) {
+        this.phone_ID = phone_ID;
+    }
+
+    public String getApartment_number() {
+        return Apartment_number;
+    }
+
+    public void setApartment_number(String apartment_number) {
+        Apartment_number = apartment_number;
+    }
+
+    public Integer getPhone_ID() {
         return phone_ID;
     }
 
@@ -81,6 +98,8 @@ public class Phones {
     public void setAddress_ID(Address address_ID) {
         this.address_ID = address_ID;
     }
+
+    public String getIdStr(){return phone_ID.toString();}
 
 
     @Override

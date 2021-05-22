@@ -6,6 +6,7 @@ import com.vaadin.database.data.entity.Long_distance_call_prices;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Long_distance_call_pricesService;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
+import com.vaadin.database.frontend.forms.LdcForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -35,7 +36,7 @@ public class Long_distance_call_pricesView extends VerticalLayout {
         form = new Ldc_pricesForm(long_distance_call_pricesService.findAll());
         form.addListener(Ldc_pricesForm.SaveEvent.class, this::saveLdc_prices);
         form.addListener(Ldc_pricesForm.DeleteEvent.class, this::deleteLdc_prices);
-        form.addListener(Connection_pricesForm.CloseEvent.class, e -> closeEditor());
+        form.addListener(Ldc_pricesForm.CloseEvent.class, e -> closeEditor());
 
         Div content = new Div(form, grid);
         content.addClassName("content");

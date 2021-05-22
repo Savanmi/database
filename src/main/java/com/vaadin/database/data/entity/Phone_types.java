@@ -10,7 +10,7 @@ public class Phone_types {
     @Id
     @SequenceGenerator(name = "phoneTypes_generator", sequenceName = "phoneTypes_seq", initialValue = 5)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phoneTypes_generator")
-    private int phone_type_ID;
+    private Integer phone_type_ID;
 
     private String type_name;
 
@@ -27,11 +27,11 @@ public class Phone_types {
         this.type_name = type_name;
     }
 
-    public int getPhone_type_ID() {
+    public Integer getPhone_type_ID() {
         return phone_type_ID;
     }
 
-    public void setPhone_type_ID(int phone_type_ID) {
+    public void setPhone_type_ID(Integer phone_type_ID) {
         this.phone_type_ID = phone_type_ID;
     }
 
@@ -42,6 +42,8 @@ public class Phone_types {
     public void setType_name(String type_name) {
         this.type_name = type_name;
     }
+
+    public String getIdStr(){return phone_type_ID.toString();}
 
 //    @Override
 //    public String toString() {

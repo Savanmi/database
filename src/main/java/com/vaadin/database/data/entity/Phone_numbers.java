@@ -7,9 +7,9 @@ import java.util.Set;
 public class Phone_numbers {
 
     @Id
-    @SequenceGenerator(name = "phoneNumbers_generator", sequenceName = "phoneNumbers_seq", initialValue = 15)
+    @SequenceGenerator(name = "phoneNumbers_generator", sequenceName = "phoneNumbers_seq", initialValue = 50)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phoneNumbers_generator")
-    private int phone_number_ID;
+    private Integer phone_number_ID;
 
     private String phone_number;
 
@@ -22,17 +22,17 @@ public class Phone_numbers {
 
     public Phone_numbers(){}
 
-    public Phone_numbers(int phone_number_ID, String phone_number, Telephone_exchanges telephone_exchange_id) {
+    public Phone_numbers(Integer phone_number_ID, String phone_number, Telephone_exchanges telephone_exchange_id) {
         this.phone_number_ID = phone_number_ID;
         this.phone_number = phone_number;
         this.telephone_exchange_id = telephone_exchange_id;
     }
 
-    public int getPhone_number_ID() {
+    public Integer getPhone_number_ID() {
         return phone_number_ID;
     }
 
-    public void setPhone_number_ID(int phone_number_ID) {
+    public void setPhone_number_ID(Integer phone_number_ID) {
         this.phone_number_ID = phone_number_ID;
     }
 
@@ -51,6 +51,8 @@ public class Phone_numbers {
     public void setTelephone_exchange_id(Telephone_exchanges telephone_exchange_id) {
         this.telephone_exchange_id = telephone_exchange_id;
     }
+
+    public String getIdStr(){return phone_number_ID.toString();}
 
 
     @Override

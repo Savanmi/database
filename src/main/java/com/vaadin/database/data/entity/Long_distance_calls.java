@@ -3,6 +3,7 @@ package com.vaadin.database.data.entity;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 public class Long_distance_calls {
@@ -20,16 +21,16 @@ public class Long_distance_calls {
     private Phones destination_phone_ID;
 
     @Column(nullable = false)
-    private LocalDate start_date;
+    private LocalDateTime start_date;
 
     @Column(nullable = false)
-    private LocalDate end_date;
+    private LocalDateTime end_date;
 
     private Integer call_price;
 
     public Long_distance_calls(){}
 
-    public Long_distance_calls(int long_distance_call_ID, Phones source_phone_ID, Phones destination_phone_ID, LocalDate start_date, LocalDate end_date, @Min(0) Integer call_price) {
+    public Long_distance_calls(int long_distance_call_ID, Phones source_phone_ID, Phones destination_phone_ID, LocalDateTime start_date, LocalDateTime end_date, @Min(0) Integer call_price) {
         this.long_distance_call_ID = long_distance_call_ID;
         this.source_phone_ID = source_phone_ID;
         this.destination_phone_ID = destination_phone_ID;
@@ -62,23 +63,23 @@ public class Long_distance_calls {
         this.destination_phone_ID = destination_phone_ID;
     }
 
-    public LocalDate getStart_date() {
+    public LocalDateTime getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(LocalDate start_date) {
+    public void setStart_date(LocalDateTime start_date) {
         this.start_date = start_date;
     }
 
-    public LocalDate getEnd_date() {
+    public LocalDateTime getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(LocalDate end_date) {
+    public void setEnd_date(LocalDateTime end_date) {
         this.end_date = end_date;
     }
 
-    public long getCall_price() {
+    public Integer getCall_price() {
         return call_price;
     }
 
