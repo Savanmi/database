@@ -20,22 +20,18 @@ public class Subscription_fees {
     private Phone_types phone_number_type_ID;
 
     @Column(nullable = false)
-    @Min(0)
-    @Max(1)
-    private int is_deadhead;
+    private boolean is_deadhead;
+
+    @Column(nullable = false)
+    private boolean has_long_distance_calls;
 
     @Column(nullable = false)
     @Min(0)
-    @Max(1)
-    private int has_long_distance_calls;
-
-    @Column(nullable = false)
-    @Min(0)
-    private long subscription_fee;
+    private int subscription_fee;
 
     public Subscription_fees(){}
 
-    public Subscription_fees(int subscription_fee_ID, Phone_types phone_number_type_ID, @Min(0) @Max(1) int is_deadhead, @Min(0) @Max(1) int has_long_distance_calls, @Min(0) long subscription_fee) {
+    public Subscription_fees(int subscription_fee_ID, Phone_types phone_number_type_ID, boolean is_deadhead, boolean has_long_distance_calls, @Min(0) int subscription_fee) {
         this.subscription_fee_ID = subscription_fee_ID;
         this.phone_number_type_ID = phone_number_type_ID;
         this.is_deadhead = is_deadhead;
@@ -59,27 +55,27 @@ public class Subscription_fees {
         this.phone_number_type_ID = phone_number_type_ID;
     }
 
-    public int getIs_deadhead() {
+    public boolean getIs_deadhead() {
         return is_deadhead;
     }
 
-    public void setIs_deadhead(int is_deadhead) {
+    public void setIs_deadhead(boolean is_deadhead) {
         this.is_deadhead = is_deadhead;
     }
 
-    public int getHas_long_distance_calls() {
+    public boolean getHas_long_distance_calls() {
         return has_long_distance_calls;
     }
 
-    public void setHas_long_distance_calls(int has_long_distance_calls) {
+    public void setHas_long_distance_calls(boolean has_long_distance_calls) {
         this.has_long_distance_calls = has_long_distance_calls;
     }
 
-    public long getSubscription_fee() {
+    public int getSubscription_fee() {
         return subscription_fee;
     }
 
-    public void setSubscription_fee(long subscription_fee) {
+    public void setSubscription_fee(int subscription_fee) {
         this.subscription_fee = subscription_fee;
     }
 

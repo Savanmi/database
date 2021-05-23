@@ -41,11 +41,11 @@ public class Telephone_exchanges {
         this.exchange_type = exchange_type;
     }
 
-    public int getTelephone_exchange_id() {
+    public Integer getTelephone_exchange_id() {
         return telephone_exchange_id;
     }
 
-    public void setTelephone_exchange_id(int telephone_exchange_id) {
+    public void setTelephone_exchange_id(Integer telephone_exchange_id) {
         this.telephone_exchange_id = telephone_exchange_id;
     }
 
