@@ -1,6 +1,5 @@
 package com.vaadin.database.data.service;
 
-import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Public_phones;
 import com.vaadin.database.data.repository.Public_phonesRepository;
 import org.springframework.stereotype.Service;
@@ -15,6 +14,8 @@ public class Public_phonesService {
     public Public_phonesService(Public_phonesRepository public_phonesRepository){
         this.public_phonesRepository = public_phonesRepository;
     }
+    public List<Object[]> findPublicPhonesList(String region, Integer exchange_id){
+        return public_phonesRepository.findPublicPhonesList(region, exchange_id);}
 
     public List<Public_phones> findAll() {
         return (List<Public_phones>) public_phonesRepository.findAll();

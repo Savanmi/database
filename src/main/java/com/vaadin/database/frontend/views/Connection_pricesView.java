@@ -1,4 +1,4 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Callers;
@@ -6,6 +6,7 @@ import com.vaadin.database.data.entity.Clients;
 import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Connection_pricesService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.CallerForm;
 import com.vaadin.database.frontend.forms.ClientForm;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
@@ -16,9 +17,11 @@ import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.value.ValueChangeMode;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("connect_prices")
+@Route(value="connect_prices", layout = MainView.class)
+@PageTitle("connect prices")
 public class Connection_pricesView extends VerticalLayout {
 
     private Connection_pricesService connection_pricesService;
@@ -52,7 +55,7 @@ public class Connection_pricesView extends VerticalLayout {
 
     private HorizontalLayout getToolBar() {
 
-        Button addConnection_prices = new Button("Добавить клиента", click -> addConnection_prices());
+        Button addConnection_prices = new Button("Добавить цену", click -> addConnection_prices());
 
         HorizontalLayout toolbar = new HorizontalLayout(addConnection_prices);
         toolbar.addClassName("toolbar");

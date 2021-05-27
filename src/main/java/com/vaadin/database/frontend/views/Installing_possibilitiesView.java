@@ -1,4 +1,4 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Installing_possibilities;
@@ -7,6 +7,7 @@ import com.vaadin.database.data.service.AddressService;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Installing_possibilitiesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.Installing_possibilitiesForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
@@ -16,9 +17,11 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("installing")
+@Route(value="installing", layout = MainView.class)
+@PageTitle("installing possibilities")
 public class Installing_possibilitiesView extends VerticalLayout {
 
     private Installing_possibilitiesService installing_possibilitiesService;

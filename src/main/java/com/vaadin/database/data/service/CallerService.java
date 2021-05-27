@@ -2,6 +2,7 @@ package com.vaadin.database.data.service;
 
 import com.vaadin.database.data.entity.Callers;
 import com.vaadin.database.data.repository.CallerRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,11 @@ import java.util.List;
 public class CallerService {
 
     private CallerRepository callerRepository;
+
+    public List<Object[]> findCallersList(Integer texID, boolean id_deadhead, Integer lowAge, Integer upAge, String second ){
+        return callerRepository.findCallersList(texID,id_deadhead,lowAge,upAge,second);
+    }
+
 
     public CallerService(CallerRepository callerRepository){
         this.callerRepository = callerRepository;

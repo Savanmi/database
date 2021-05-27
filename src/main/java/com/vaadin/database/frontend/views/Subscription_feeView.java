@@ -1,9 +1,10 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Public_phones;
 import com.vaadin.database.data.entity.Subscription_fees;
 import com.vaadin.database.data.service.Phone_typesService;
 import com.vaadin.database.data.service.Subscription_feesService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.Public_phonesForm;
 import com.vaadin.database.frontend.forms.Subscription_feeForm;
 import com.vaadin.flow.component.button.Button;
@@ -12,9 +13,12 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("fee")
+
+@Route(value="subscription_fee", layout = MainView.class)
+@PageTitle("subscription fees")
 public class Subscription_feeView extends VerticalLayout {
 
     private Subscription_feesService subscription_feesService;

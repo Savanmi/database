@@ -1,10 +1,11 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Address;
 import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Clients;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.ClientsService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.AddressForm;
 import com.vaadin.database.frontend.forms.BalanceForm;
 import com.vaadin.database.frontend.forms.ClientForm;
@@ -16,9 +17,11 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("clients")
+@Route(value="clients", layout = MainView.class)
+@PageTitle("clients")
 public class ClientsView extends VerticalLayout {
 
     private ClientsService clientsService;

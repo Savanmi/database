@@ -1,6 +1,9 @@
 package com.vaadin.database.data.entity;
 
+import com.vaadin.database.data.repository.Public_phonesRepository;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Public_phones {
@@ -19,6 +22,8 @@ public class Public_phones {
     private Telephone_exchanges telephone_exchange_ID;
 
     public Public_phones(){}
+
+
 
     public Public_phones(int public_phone_ID, Address address_ID, Telephone_exchanges telephone_exchange_ID) {
         this.public_phone_ID = public_phone_ID;

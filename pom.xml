@@ -44,6 +44,8 @@
         </repository>
     </repositories>
 
+
+
     <pluginRepositories>
         <!-- Main Maven com.vaadin.database.data.repository -->
         <pluginRepository>
@@ -173,7 +175,7 @@
                     <schemas>
                         <schema>bd_gts</schema>
                     </schemas>
-                    ...
+                        <table>my_schema_history_table</table>
                 </configuration>
             </plugin>
 

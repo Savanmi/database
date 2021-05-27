@@ -8,6 +8,7 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
@@ -16,7 +17,7 @@ import com.vaadin.flow.shared.Registration;
 import java.util.List;
 
 public class PhonesForm extends FormLayout {
-    TextField Apartment_number = new TextField("номер квартиры");
+    IntegerField Apartment_number = new IntegerField("номер квартиры");
     ComboBox<Phone_numbers> phone_number_ID = new ComboBox("Id номера телефона");
     ComboBox<Phone_types> phone_type_ID = new ComboBox("Id типа телефона");
     ComboBox<Address> address_ID = new ComboBox("Id адреса");

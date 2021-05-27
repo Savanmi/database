@@ -3,6 +3,7 @@ package com.vaadin.database.data.service;
 import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Phone_numbers;
 import com.vaadin.database.data.repository.Phone_numbersRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,11 @@ import java.util.List;
 public class Phone_numbersService {
 
     private Phone_numbersRepository phone_numbersRepository;
+
+    public     List<Object[]> findFreePhonesList(Integer texID, Integer address ){
+        return phone_numbersRepository.findFreePhonesList(texID,address);
+    };
+
 
     public Phone_numbersService(Phone_numbersRepository phone_numbersRepository){
         this.phone_numbersRepository = phone_numbersRepository;

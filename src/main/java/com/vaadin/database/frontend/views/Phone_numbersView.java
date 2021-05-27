@@ -1,4 +1,4 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Long_distance_calls;
@@ -7,6 +7,7 @@ import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Phone_numbersService;
 import com.vaadin.database.data.service.PhonesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.LdcForm;
 import com.vaadin.database.frontend.forms.Phone_numbersForm;
 import com.vaadin.flow.component.button.Button;
@@ -15,9 +16,11 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("numbers")
+@Route(value="numbers", layout = MainView.class)
+@PageTitle("phone numbers")
 public class Phone_numbersView extends VerticalLayout {
 
     private Phone_numbersService phone_numbersService;

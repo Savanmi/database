@@ -10,7 +10,7 @@ public class Phones {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "phones_generator")
     private Integer phone_ID;
 
-    private String Apartment_number;
+    private Integer Apartment_number;
 
     @OneToOne
     @JoinColumn(name = "phone_number_ID", referencedColumnName = "phone_number_ID")
@@ -36,7 +36,7 @@ public class Phones {
 
     public Phones(){}
 
-    public Phones(Integer phone_ID, String apartment_number, Phone_numbers phone_number_ID, Phone_types phone_type_ID, Callers caller_ID, Address address_ID, Long_distance_calls long_distance_calls, Long_distance_calls distance_calls) {
+    public Phones(Integer phone_ID, Integer apartment_number, Phone_numbers phone_number_ID, Phone_types phone_type_ID, Callers caller_ID, Address address_ID, Long_distance_calls long_distance_calls, Long_distance_calls distance_calls) {
         this.phone_ID = phone_ID;
         Apartment_number = apartment_number;
         this.phone_number_ID = phone_number_ID;
@@ -51,11 +51,11 @@ public class Phones {
         this.phone_ID = phone_ID;
     }
 
-    public String getApartment_number() {
+    public Integer getApartment_number() {
         return Apartment_number;
     }
 
-    public void setApartment_number(String apartment_number) {
+    public void setApartment_number(Integer apartment_number) {
         Apartment_number = apartment_number;
     }
 

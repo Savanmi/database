@@ -1,10 +1,11 @@
-package com.vaadin.database.frontend;
+package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Long_distance_call_prices;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Long_distance_call_pricesService;
+import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.LdcForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
@@ -14,9 +15,11 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("ldcall_prices")
+@Route(value="ldcall_prices", layout = MainView.class)
+@PageTitle("ldcall prices")
 public class Long_distance_call_pricesView extends VerticalLayout {
 
     private Long_distance_call_pricesService long_distance_call_pricesService;
