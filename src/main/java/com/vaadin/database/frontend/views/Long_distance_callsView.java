@@ -47,7 +47,7 @@ public class Long_distance_callsView extends VerticalLayout {
         content.addClassName("content");
         content.setSizeFull();
 
-        add(new H3("Данные о междугородних звонках"));
+        add(new H3("Данные о звонках"));
         add(getToolBar(),content);
         updatelist();
 
@@ -57,7 +57,7 @@ public class Long_distance_callsView extends VerticalLayout {
 
     private HorizontalLayout getToolBar() {
 
-        Button addLdc = new Button("Добавить цену на межгород", click -> addLdc());
+        Button addLdc = new Button("Добавить звонок", click -> addLdc());
 
         HorizontalLayout toolbar = new HorizontalLayout(addLdc);
         toolbar.addClassName("toolbar");

@@ -28,4 +28,76 @@ public interface CallerRepository extends CrudRepository<Callers, Integer> {
             "    AND (SECOND_NAME = :second )\n", nativeQuery = true)
     List<Object[]> findCallersList(@Param("texID") Integer texID, @Param("id_deadhead") boolean id_deadhead,@Param("lowAge") Integer lowAge, @Param("upAge") Integer upAge, @Param("second") String second );
 
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n"+
+            "SUBSCRIPTION_DEBT > :min_subscription_debt", nativeQuery = true)
+    List<Object[]> findDebtorsListbySubscriptionDebt(@Param("min_subscription_debt") Integer in_subscription_debt);
+
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n"+
+            "LONG_DISTANCE_CALLS_DEBT > :min_long_distance_debt", nativeQuery = true)
+    List<Object[]> findDebtorsListbyLDCDebt(@Param("min_long_distance_debt") Integer min_long_distance_debt);
+
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n"+
+            "GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) > :min_long_distance_debt_age", nativeQuery = true)
+    List<Object[]> findDebtorsListbyLDCDebtAge(@Param("min_long_distance_debt_age") Integer min_long_distance_debt_age);
+
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n"+
+            "GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID) > :min_subscription_debt_age", nativeQuery = true)
+    List<Object[]> findDebtorsListbySubscriptionDebtAge(@Param("min_subscription_debt_age") Integer min_subscription_debt_age);
+
 }

@@ -107,6 +107,7 @@ public class AddressView extends VerticalLayout {
         grid.addClassName("address-grid");
         grid.setSizeFull();
 
+        grid.setColumns("address_ID","city","region","street","building_number","zip_code");
         grid.getColumns().forEach(subscription_feesColumn -> subscription_feesColumn.setAutoWidth(true));
 
         grid.asSingleSelect().addValueChangeListener(gridAddressComponentValueChangeEvent -> editAddress(gridAddressComponentValueChangeEvent.getValue()));

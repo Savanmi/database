@@ -49,6 +49,8 @@ public class CallersView extends VerticalLayout {
         add(new H3("Данные о звонящих"));
         add(getToolBar(),content);
         updatelist();
+
+        closeEditor();
     }
 
     private HorizontalLayout getToolBar() {
@@ -102,6 +104,7 @@ public class CallersView extends VerticalLayout {
 
         grid.addClassName("address-grid");
         grid.setSizeFull();
+        grid.setColumns("caller_id", "client_id", "has_long_distance_calls", "is_blocked", "telephone_exchange_ID");
 
         grid.getColumns().forEach(subscription_feesColumn -> subscription_feesColumn.setAutoWidth(true));
 

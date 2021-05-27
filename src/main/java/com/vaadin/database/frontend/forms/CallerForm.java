@@ -11,6 +11,7 @@ import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
@@ -19,7 +20,8 @@ import java.util.List;
 
 public class CallerForm extends FormLayout {
 
-    ComboBox<Telephone_exchanges> telephone_exchanges_ID = new ComboBox<>("ID ГТС");
+    ComboBox<Telephone_exchanges> telephone_exchange_ID = new ComboBox<>("ID АТС");
+    //IntegerField tex = new IntegerField();
     ComboBox<Clients> client_ID = new ComboBox<>("ID клиента");
     Checkbox has_long_distance_calls = new Checkbox("Подключен межгород");
     Checkbox is_blocked = new Checkbox("Заблокирован");
@@ -40,8 +42,8 @@ public class CallerForm extends FormLayout {
 
 
 
-        telephone_exchanges_ID.setItems(telephone_exchanges);
-        telephone_exchanges_ID.setItemLabelGenerator(Telephone_exchanges::getIdStr);
+       telephone_exchange_ID.setItems(telephone_exchanges);
+        telephone_exchange_ID.setItemLabelGenerator(Telephone_exchanges::getIdStr);
 
         client_ID.setItems(clients);
         client_ID.setItemLabelGenerator(Clients::getIdStr);
@@ -55,7 +57,7 @@ public class CallerForm extends FormLayout {
         add(is_blocked,
                 has_long_distance_calls,
                 client_ID,
-                telephone_exchanges_ID,
+                telephone_exchange_ID,
                 createButtonsLayout());
     }
 

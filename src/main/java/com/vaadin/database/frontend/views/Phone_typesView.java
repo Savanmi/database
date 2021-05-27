@@ -104,6 +104,8 @@ public class Phone_typesView extends VerticalLayout {
         grid.addClassName("address-grid");
         grid.setSizeFull();
 
+        grid.setColumns("phone_type_ID","type_name");
+
         grid.getColumns().forEach(subscription_feesColumn -> subscription_feesColumn.setAutoWidth(true));
 
         grid.asSingleSelect().addValueChangeListener(gridAddressComponentValueChangeEvent -> editPhone_types(gridAddressComponentValueChangeEvent.getValue()));

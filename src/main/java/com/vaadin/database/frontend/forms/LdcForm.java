@@ -21,7 +21,7 @@ import java.util.List;
 
 public class LdcForm extends FormLayout {
 
-    IntegerField call_price = new IntegerField("цена за минуту");
+    IntegerField call_price = new IntegerField("цена за разговор");
     ComboBox<Phones> source_phone_ID = new ComboBox("Исходящий абонент");
     ComboBox<Phones> destination_phone_ID = new ComboBox("Входящий абонент");
     DateTimePicker start_date = new DateTimePicker("Начало разговора");

@@ -54,7 +54,7 @@ public class Phone_numbersView extends VerticalLayout {
 
     private HorizontalLayout getToolBar() {
 
-        Button addPhone_numbers = new Button("Добавить цену на межгород", click -> addPhone_numbers());
+        Button addPhone_numbers = new Button("Добавить ноемр телефона", click -> addPhone_numbers());
 
         HorizontalLayout toolbar = new HorizontalLayout(addPhone_numbers);
         toolbar.addClassName("toolbar");
@@ -103,6 +103,8 @@ public class Phone_numbersView extends VerticalLayout {
 
         grid.addClassName("address-grid");
         grid.setSizeFull();
+
+        grid.setColumns("phone_number_ID","phone_number","telephone_exchange_id");
 
         grid.getColumns().forEach(subscription_feesColumn -> subscription_feesColumn.setAutoWidth(true));
 

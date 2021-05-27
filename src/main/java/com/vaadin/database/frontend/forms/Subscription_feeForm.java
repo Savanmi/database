@@ -24,7 +24,7 @@ public class Subscription_feeForm extends FormLayout {
     ComboBox<Phone_types> phone_number_type_ID = new ComboBox<>("Id типа телефона");
     Checkbox is_deadhead = new Checkbox("Есть льгота");
     Checkbox has_long_distance_calls = new Checkbox("Есть связь с межгородом");
-    IntegerField subscription_fee = new IntegerField("Плата за подписку");
+    IntegerField subscription_fee = new IntegerField("Абонентская плата");
 
 
 

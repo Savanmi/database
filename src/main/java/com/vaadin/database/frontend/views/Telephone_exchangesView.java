@@ -102,6 +102,8 @@ public class Telephone_exchangesView extends VerticalLayout {
         grid.addClassName("subscription_fee-grid");
         grid.setSizeFull();
 
+        grid.setColumns("telephone_exchange_id","exchange_name","exchange_type");
+
         grid.getColumns().forEach(telephone_exchangesColumn -> telephone_exchangesColumn.setAutoWidth(true));
         grid.asSingleSelect().addValueChangeListener(gridAddressComponentValueChangeEvent -> editTelephone_exchanges(gridAddressComponentValueChangeEvent.getValue()));
 

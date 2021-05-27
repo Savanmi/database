@@ -29,7 +29,7 @@ public class First extends VerticalLayout{
             this.callerService = callerService;
             this.grid = new Grid<>();
 
-            getToolBar().setAlignItems(Alignment.START);
+            getToolBar().setAlignItems(Alignment.BASELINE);
             configureGrid();
             add(new H3("Получить перечень абонентов"),getToolBar(), grid);
             setSizeFull();
@@ -50,12 +50,15 @@ public class First extends VerticalLayout{
         }
 
         private HorizontalLayout getToolBar() {
-            IntegerField tex = new IntegerField("id атс");
+            IntegerField tex = new IntegerField();
+            tex.setPlaceholder("id атс");
             Checkbox deadhead = new Checkbox("Льготник");
-            IntegerField low = new IntegerField("Возраст от");
-            IntegerField up = new IntegerField("Возраст до");
-
-            TextField second = new TextField("фамилия");
+            IntegerField low = new IntegerField();
+            low.setPlaceholder("Возраст от");
+            IntegerField up = new IntegerField();
+            up.setPlaceholder("Возраст до");
+            TextField second = new TextField();
+            second.setPlaceholder("Фамилия");
 
 
             Button exec = new Button("найти", click -> findPublicPhonesList( tex.getValue(), deadhead.getValue(), low.getValue(), up.getValue(), second.getValue()));
@@ -64,13 +67,13 @@ public class First extends VerticalLayout{
         }
 
         private void findPublicPhonesList(Integer param1, boolean param2, Integer param3, Integer param4, String param5) {
-            List<Object[]> shares = null;
+            List<Object[]> data = null;
 
             if(param1 != null && param3 != 0 && param4 != 0 && param5 != null){
-                shares = callerService.findCallersList(param1, param2, param3, param4, param5);
-                if (shares.isEmpty()) {
+                data = callerService.findCallersList(param1, param2, param3, param4, param5);
+                if (data.isEmpty()) {
                     grid.setItems(Collections.emptyList());
-                } else grid.setItems(shares);
+                } else grid.setItems(data);
             }
             else {
                 grid.setItems(Collections.emptyList());

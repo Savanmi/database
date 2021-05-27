@@ -115,6 +115,8 @@ public class ClientsView extends VerticalLayout {
         grid.addClassName("address-grid");
         grid.setSizeFull();
 
+        grid.setColumns("client_ID","second_name", "first_name", "middle_name", "gender", "birth_date", "is_deadhead");
+
         grid.getColumns().forEach(subscription_feesColumn -> subscription_feesColumn.setAutoWidth(true));
 
         grid.asSingleSelect().addValueChangeListener(gridAddressComponentValueChangeEvent -> editClient(gridAddressComponentValueChangeEvent.getValue()));

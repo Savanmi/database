@@ -43,6 +43,8 @@ INSERT INTO bd_gts.clients (Client_ID, Second_name, First_name, Middle_name, Gen
 INSERT INTO bd_gts.clients (Client_ID, Second_name, First_name, Middle_name, Gender, Birth_date, Is_deadhead) VALUES (8, 'Филиппова', 'Мила', 'Валерьевна', 'F', '1985-05-13', 0);
 INSERT INTO bd_gts.clients (Client_ID, Second_name, First_name, Middle_name, Gender, Birth_date, Is_deadhead) VALUES (9, 'Некрасова', 'Мия', 'Васильевна', 'F', '2000-04-07', 1);
 INSERT INTO bd_gts.clients (Client_ID, Second_name, First_name, Middle_name, Gender, Birth_date, Is_deadhead) VALUES (10, 'Орехова', 'Елена', 'Константиновна', 'F', '1987-11-11', 0);
+INSERT INTO bd_gts.clients (Client_ID, Second_name, First_name, Middle_name, Gender, Birth_date, Is_deadhead) VALUES (10, 'Саврова', 'Анастасия', 'Михайловна', 'F', '2000-11-29', 0);
+
 
 INSERT INTO bd_gts.callers (Caller_ID, Telephone_exchange_ID, Client_ID, Is_blocked, Has_long_distance_calls, balances_balance_id) VALUES (1, 1, 1, 0, 1, null);
 INSERT INTO bd_gts.callers (Caller_ID, Telephone_exchange_ID, Client_ID, Is_blocked, Has_long_distance_calls, balances_balance_id) VALUES (2, 1, 2, 0, 1, null);

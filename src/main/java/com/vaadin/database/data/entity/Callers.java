@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Table(name = "Callers")
 public class Callers {
     @Id
-    @SequenceGenerator(name = "callers_generator", sequenceName = "callers_seq", initialValue = 15)
+    @SequenceGenerator(name = "callers_generator", sequenceName = "callers_seq", initialValue = 10)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "callers_generator")
     private Integer caller_id;
 

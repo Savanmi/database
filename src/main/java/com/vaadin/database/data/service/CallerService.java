@@ -16,6 +16,22 @@ public class CallerService {
         return callerRepository.findCallersList(texID,id_deadhead,lowAge,upAge,second);
     }
 
+    public List<Object[]> findDebtorsListbyLDCDebt(Integer integ){
+        return  callerRepository.findDebtorsListbyLDCDebt(integ);
+    };
+
+    public List<Object[]> findDebtorsListbySubscriptionDebtAge(Integer integ){
+        return  callerRepository.findDebtorsListbySubscriptionDebtAge(integ);
+    };
+
+    public List<Object[]> findDebtorsListbyLDCDebtAge(Integer integ){
+        return  callerRepository.findDebtorsListbyLDCDebtAge(integ);
+    };
+
+    public List<Object[]> findDebtorsListbySubscriptionDebt(Integer integ){
+        return  callerRepository.findDebtorsListbySubscriptionDebt(integ);
+    };
+
 
     public CallerService(CallerRepository callerRepository){
         this.callerRepository = callerRepository;

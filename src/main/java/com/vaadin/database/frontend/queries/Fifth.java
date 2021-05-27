@@ -4,6 +4,7 @@ import com.vaadin.database.data.service.Public_phonesService;
 import com.vaadin.database.frontend.MainView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
@@ -26,7 +27,7 @@ public class Fifth extends VerticalLayout {
         this.grid = new Grid<>();
 
         configureGrid();
-        add(getToolBar(), grid);
+        add(new H3("Получить перечень общественных телефонов"), getToolBar(), grid);
         setSizeFull();
     }
 
@@ -45,8 +46,10 @@ public class Fifth extends VerticalLayout {
     }
 
     private HorizontalLayout getToolBar() {
-        TextField regoin = new TextField("район");
-        IntegerField tex = new IntegerField("id атс");
+        TextField regoin = new TextField();
+        regoin.setPlaceholder("район");
+        IntegerField tex = new IntegerField();
+        tex.setPlaceholder("id атс");
 
         Button exec = new Button("найти", click -> findPublicPhonesList(regoin.getValue(), tex.getValue()));
         HorizontalLayout toolbar = new HorizontalLayout(regoin,tex, exec);
@@ -54,13 +57,13 @@ public class Fifth extends VerticalLayout {
     }
 
     private void findPublicPhonesList(String param1, Integer param2) {
-        List<Object[]> shares = null;
+        List<Object[]> data = null;
 
         if(param1 != null && param2 != null){
-            shares = public_phonesService.findPublicPhonesList(param1, param2);
-            if (shares.isEmpty()) {
+            data = public_phonesService.findPublicPhonesList(param1, param2);
+            if (data.isEmpty()) {
                 grid.setItems(Collections.emptyList());
-            } else grid.setItems(shares);
+            } else grid.setItems(data);
         }
         else {
             grid.setItems(Collections.emptyList());

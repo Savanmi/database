@@ -61,7 +61,7 @@ public class Connection_requestsView extends VerticalLayout {
 
     private HorizontalLayout getToolBar() {
 
-        Button addConnection_requests = new Button("Добавить клиента", click -> addConnection_requests());
+        Button addConnection_requests = new Button("Добавить запрос", click -> addConnection_requests());
 
         HorizontalLayout toolbar = new HorizontalLayout(addConnection_requests);
         toolbar.addClassName("toolbar");

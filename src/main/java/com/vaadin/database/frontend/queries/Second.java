@@ -49,25 +49,27 @@ import java.util.List;
             grid.setItems(Collections.emptyList());
         }
 
-        private VerticalLayout getToolBar() {
-            IntegerField tex = new IntegerField("id атс");
-            IntegerField address = new IntegerField("id адреса");
+        private HorizontalLayout getToolBar() {
+            IntegerField tex = new IntegerField();
+            tex.setPlaceholder("id атс");
+            IntegerField address = new IntegerField();
+            address.setPlaceholder("id адреса");
 
 
             Button exec = new Button("найти", click -> findPublicPhonesList( tex.getValue(),address.getValue()));
 
-            VerticalLayout toolbar = new VerticalLayout(tex, address, exec);
+            HorizontalLayout toolbar = new HorizontalLayout(tex, address, exec);
             return  toolbar;
         }
 
         private void findPublicPhonesList(Integer param1, Integer param2) {
-            List<Object[]> shares = null;
+            List<Object[]> data = null;
 
             if(param1 != null && param2 != 0 ){
-                shares = phone_numbersService.findFreePhonesList(param1, param2);
-                if (shares.isEmpty()) {
+                data = phone_numbersService.findFreePhonesList(param1, param2);
+                if (data.isEmpty()) {
                     grid.setItems(Collections.emptyList());
-                } else grid.setItems(shares);
+                } else grid.setItems(data);
             }
             else {
                 grid.setItems(Collections.emptyList());

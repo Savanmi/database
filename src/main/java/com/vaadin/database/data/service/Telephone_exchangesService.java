@@ -11,6 +11,16 @@ import java.util.List;
 public class Telephone_exchangesService {
     private Telephone_exchangesRepository telephone_exchangesRepository;
 
+    public List<Object[]> findTelephoneExchangesByDebts(){
+        return telephone_exchangesRepository.findTelephoneExchangesByDebts();
+    };
+
+    public List<Object[]> findTelephoneExchangesByDebtors(){
+        return telephone_exchangesRepository.findTelephoneExchangesByDebtors();
+    };
+
+
+
     public Telephone_exchangesService (Telephone_exchangesRepository telephone_exchangesRepository){
         this.telephone_exchangesRepository = telephone_exchangesRepository;
     }
