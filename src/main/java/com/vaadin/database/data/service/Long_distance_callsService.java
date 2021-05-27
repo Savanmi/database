@@ -12,6 +12,11 @@ public class Long_distance_callsService {
 
     private Long_distance_callsRepository long_distance_callsRepository;
 
+    public     List<Object[]> findTownWithMaxCalls(){
+        return long_distance_callsRepository.findTownWithMaxCalls();
+    };
+
+
     public Long_distance_callsService(Long_distance_callsRepository long_distance_callsRepository){
         this.long_distance_callsRepository = long_distance_callsRepository;
     }

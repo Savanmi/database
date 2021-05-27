@@ -13,6 +13,11 @@ public class Phone_numbersService {
 
     private Phone_numbersRepository phone_numbersRepository;
 
+    public     List<Object[]>findCallersInfo(Integer id){
+        return phone_numbersRepository.findCallersInfo(id);
+    };
+
+
     public     List<Object[]> findFreePhonesList(Integer texID, Integer address ){
         return phone_numbersRepository.findFreePhonesList(texID,address);
     };

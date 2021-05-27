@@ -100,4 +100,29 @@ public interface CallerRepository extends CrudRepository<Callers, Integer> {
             "GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID) > :min_subscription_debt_age", nativeQuery = true)
     List<Object[]> findDebtorsListbySubscriptionDebtAge(@Param("min_subscription_debt_age") Integer min_subscription_debt_age);
 
+    @Query(value = "SELECT\n" +
+            "    DISTINCT\n" +
+            "    CALLER_ID,\n" +
+            "    SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "    TELEPHONE_EXCHANGE_ID,\n" +
+            "    EXCHANGE_TYPE,\n" +
+            "    IS_DEADHEAD,\n" +
+            "    REGION\n" +
+            "FROM\n" +
+            "    CALLERS CA\n" +
+            "    JOIN PHONES USING (CALLER_ID)\n" +
+            "    JOIN PHONE_TYPES USING (PHONE_TYPE_ID)\n" +
+            "    JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "    JOIN CALLER_ADDRESSES USING (CALLER_ID)\n" +
+            "    JOIN telephone_exchanges USING (TELEPHONE_EXCHANGE_ID)\n" +
+            "WHERE\n" +
+            "    TYPE_NAME = 'Параллельный' AND\n" +
+            "    TELEPHONE_EXCHANGE_ID = :tex AND\n" +
+            "    CL.IS_DEADHEAD = :deadhead AND\n" +
+            "    REGION = :region \n" +
+            "    \n" +
+            "ORDER BY\n" +
+            "    CALLER_ID", nativeQuery = true)
+    List<Object[]> findCallerswithParallelPhones(@Param("tex") Integer tex,@Param("deadhead") boolean deadhead,@Param("region") String region );
+
 }

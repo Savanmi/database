@@ -12,6 +12,11 @@ public class ClientsService {
 
     private ClientsRepository clientsRepository;
 
+    public List<Object[]>findDeadheadPercentage(Integer tex, String region){
+        return clientsRepository.findDeadheadPercentage(tex, region);
+    };
+
+
     public ClientsService(ClientsRepository clientsRepository){
         this.clientsRepository = clientsRepository;
     }

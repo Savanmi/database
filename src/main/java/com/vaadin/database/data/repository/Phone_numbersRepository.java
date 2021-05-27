@@ -26,6 +26,24 @@ public interface Phone_numbersRepository extends CrudRepository<Phone_numbers, I
             "                (ADDRESS_ID = :address)", nativeQuery = true)
     List<Object[]> findFreePhonesList(@Param("tex") Integer texID, @Param("address") Integer address );
 
+    @Query(value = "SELECT\n" +
+            "    PHONE_NUMBER_ID,\n" +
+            "    TYPE_NAME,\n" +
+            "    SECOND_NAME,\n" +
+            "    FIRST_NAME,\n" +
+            "    MIDDLE_NAME,\n" +
+            "    AGE\n" +
+            "FROM\n" +
+            "    PHONE_NUMBERS PN\n" +
+            "    JOIN PHONES P USING (PHONE_NUMBER_ID)\n" +
+            "    JOIN PHONE_TYPES PT USING (PHONE_TYPE_ID)\n" +
+            "    JOIN CALLERS CA USING (CALLER_ID)\n" +
+            "    JOIN CLIENTS C3 USING (CLIENT_ID)\n" +
+            "    JOIN CLIENTS_AGES C USING (CLIENT_ID)\n" +
+            "WHERE\n" +
+            "    PHONE_NUMBER_ID = :id",nativeQuery = true)
+    List<Object[]> findCallersInfo(@Param("id") Integer id);
+
 
 
 }

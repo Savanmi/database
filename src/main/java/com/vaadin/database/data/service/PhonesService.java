@@ -3,6 +3,7 @@ package com.vaadin.database.data.service;
 import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Phones;
 import com.vaadin.database.data.repository.PhonesRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,10 @@ import java.util.List;
 @Service
 public class PhonesService {
     private PhonesRepository phonesRepository;
+
+    public List<Object[]> findPhonesList(String street,boolean blocked){
+        return phonesRepository.findPhonesList(street, blocked);
+    }
 
     public PhonesService(PhonesRepository phonesRepository){
         this.phonesRepository = phonesRepository;

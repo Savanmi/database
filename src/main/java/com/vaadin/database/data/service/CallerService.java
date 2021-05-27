@@ -12,6 +12,11 @@ public class CallerService {
 
     private CallerRepository callerRepository;
 
+    public     List<Object[]> findCallerswithParallelPhones(Integer tex,boolean deadhead,String region ){
+        return callerRepository.findCallerswithParallelPhones(tex, deadhead, region);
+    };
+
+
     public List<Object[]> findCallersList(Integer texID, boolean id_deadhead, Integer lowAge, Integer upAge, String second ){
         return callerRepository.findCallersList(texID,id_deadhead,lowAge,upAge,second);
     }
