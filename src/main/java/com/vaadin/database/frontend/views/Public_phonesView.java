@@ -9,6 +9,7 @@ import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Public_phonesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.Phone_numbersForm;
 import com.vaadin.database.frontend.forms.Public_phonesForm;
 import com.vaadin.flow.component.button.Button;
@@ -23,7 +24,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="public_phones", layout = MainView.class)
+@Route(value="public_phones", layout = QueryView.class)
 @PageTitle("public_phones")
 public class Public_phonesView extends VerticalLayout {
 

@@ -125,4 +125,45 @@ public interface CallerRepository extends CrudRepository<Callers, Integer> {
             "    CALLER_ID", nativeQuery = true)
     List<Object[]> findCallerswithParallelPhones(@Param("tex") Integer tex,@Param("deadhead") boolean deadhead,@Param("region") String region );
 
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n" +
+            "    IS_BLOCKED = 0\n" +
+            "    AND(GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) > 5\n" +
+            "        OR (GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID) > 5))", nativeQuery = true)
+    List<Object[]> findDebtorsToDisable();
+
+    @Query(value = "SELECT\n" +
+            "        DISTINCT\n" +
+            "        TELEPHONE_EXCHANGE_ID,\n" +
+            "        CALLER_ID,\n" +
+            "        IS_BLOCKED,\n" +
+            "        SECOND_NAME, FIRST_NAME, MIDDLE_NAME,\n" +
+            "        COALESCE(SUBSCRIPTION_DEBT, 0) AS SUBSCRIPTION_DEBT,\n" +
+            "        COALESCE(LONG_DISTANCE_CALLS_DEBT, 0) AS LD_CALLS_DEBT,\n" +
+            "        GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID)  AS SUBSCRIPTION_DEBT_AGE,\n" +
+            "        GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) AS LONG_DISTANCE_DEBT_AGE\n" +
+            "    FROM\n" +
+            "        CALLERS CA\n" +
+            "        JOIN CLIENTS CL USING (CLIENT_ID)\n" +
+            "        LEFT JOIN BALANCES B USING (CALLER_ID)\n" +
+            "WHERE\n" +
+            "    IS_BLOCKED = 0\n" +
+            "    AND ((GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID) >= 0 AND\n" +
+            "                GET_SUBSCRIPTION_DEBT_AGE(CALLER_ID) <= 5)\n" +
+            "        OR (GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) >= 0 AND\n" +
+            "                GET_LONG_DISTANCE_DEBT_AGE(CALLER_ID) <= 5))", nativeQuery = true)
+    List<Object[]> findDebtorsToNotify();
 }

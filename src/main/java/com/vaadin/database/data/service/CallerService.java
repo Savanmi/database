@@ -14,7 +14,15 @@ public class CallerService {
 
     public     List<Object[]> findCallerswithParallelPhones(Integer tex,boolean deadhead,String region ){
         return callerRepository.findCallerswithParallelPhones(tex, deadhead, region);
-    };
+    }
+
+    public     List<Object[]> findDebtorsToDisable(){
+        return callerRepository.findDebtorsToDisable();
+    }
+
+    public     List<Object[]> findDebtorsToNotify(){
+        return callerRepository.findDebtorsToNotify();
+    }
 
 
     public List<Object[]> findCallersList(Integer texID, boolean id_deadhead, Integer lowAge, Integer upAge, String second ){

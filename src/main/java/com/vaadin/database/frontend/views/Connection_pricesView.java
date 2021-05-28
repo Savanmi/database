@@ -7,6 +7,7 @@ import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Connection_pricesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.CallerForm;
 import com.vaadin.database.frontend.forms.ClientForm;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
@@ -20,7 +21,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="connect_prices", layout = MainView.class)
+@Route(value="connect_prices", layout = QueryView.class)
 @PageTitle("connect prices")
 public class Connection_pricesView extends VerticalLayout {
 

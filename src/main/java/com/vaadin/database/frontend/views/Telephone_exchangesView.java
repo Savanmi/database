@@ -4,6 +4,7 @@ import com.vaadin.database.data.entity.Subscription_fees;
 import com.vaadin.database.data.entity.Telephone_exchanges;
 import com.vaadin.database.data.service.Telephone_exchangesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.Subscription_feeForm;
 import com.vaadin.database.frontend.forms.Telephone_exchangesForm;
 import com.vaadin.flow.component.button.Button;
@@ -15,7 +16,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="tex", layout = MainView.class)
+@Route(value="tex", layout = QueryView.class)
 @PageTitle("telephone exchanges")
 public class Telephone_exchangesView extends VerticalLayout {
 

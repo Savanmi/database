@@ -6,6 +6,7 @@ import com.vaadin.database.data.entity.Long_distance_call_prices;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Long_distance_call_pricesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.LdcForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
@@ -18,7 +19,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="ldcall_prices", layout = MainView.class)
+@Route(value="ldcall_prices", layout = QueryView.class)
 @PageTitle("ldcall prices")
 public class Long_distance_call_pricesView extends VerticalLayout {
 

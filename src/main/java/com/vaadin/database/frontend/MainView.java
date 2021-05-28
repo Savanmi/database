@@ -36,7 +36,7 @@ public class MainView extends AppLayout {
     }
     private void createDrawer() {
         RouterLink phones = new RouterLink("Phones", PhonesView.class);
-        phones.setHighlightCondition(HighlightConditions.sameLocation());
+        //phones.setHighlightCondition(HighlightConditions.);
 
         RouterLink callers = new RouterLink("Callers", CallersView.class);
         callers.setHighlightCondition(HighlightConditions.sameLocation());
@@ -78,6 +78,9 @@ public class MainView extends AppLayout {
         fee.setHighlightCondition(HighlightConditions.sameLocation());
 
         RouterLink tex = new RouterLink("Telephone exchanges", Telephone_exchangesView.class);
+        tex.setHighlightCondition(HighlightConditions.sameLocation());
+
+        RouterLink queries = new RouterLink("Queries", QueryView.class);
         tex.setHighlightCondition(HighlightConditions.sameLocation());
 
         addToDrawer(new VerticalLayout(address, balances, callers, clients,connect_prices, connect_requests, installing_possibilities,ldc, ldc_prices,phone_numbers, phone_types,public_phones, fee, tex ));

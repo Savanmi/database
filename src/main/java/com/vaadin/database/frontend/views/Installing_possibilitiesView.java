@@ -8,6 +8,7 @@ import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Installing_possibilitiesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.Installing_possibilitiesForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
@@ -20,7 +21,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="installing", layout = MainView.class)
+@Route(value="installing", layout = QueryView.class)
 @PageTitle("installing possibilities")
 public class Installing_possibilitiesView extends VerticalLayout {
 

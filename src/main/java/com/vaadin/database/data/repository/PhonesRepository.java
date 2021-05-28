@@ -27,4 +27,21 @@ public interface PhonesRepository extends CrudRepository<Phones, Integer> {
             "ORDER BY\n" +
             "    PHONE_ID", nativeQuery = true)
     List<Object[]> findPhonesList(@Param("street") String street, @Param("blocked") boolean blocked);
+
+    @Query(value = "SELECT\n" +
+            "    DISTINCT\n" +
+            "    P.PHONE_NUMBER_ID,\n" +
+            "    PN.PHONE_NUMBER,\n" +
+            "    CALLER_ID,\n" +
+            "    PN.TELEPHONE_EXCHANGE_ID,\n" +
+            "    P.ADDRESS_ID\n" +
+            "FROM\n" +
+            "    PHONES P\n" +
+            "    JOIN PHONE_TYPES PT USING (PHONE_TYPE_ID)\n" +
+            "    JOIN PHONE_NUMBERS PN on PN.PHONE_NUMBER_ID = P.PHONE_NUMBER_ID\n" +
+            "    JOIN FREE_PHONES_POSSIBILITIES FREE_PH ON (P.ADDRESS_ID = FREE_PH.ADDRESS_ID\n" +
+            "                                                  AND PN.TELEPHONE_EXCHANGE_ID = FREE_PH.TELEPHONE_EXCHANGE_ID)\n" +
+            "WHERE\n" +
+            "    TYPE_NAME = 'Спаренный'", nativeQuery = true)
+    List<Object[]> findPairedPhones();
 }

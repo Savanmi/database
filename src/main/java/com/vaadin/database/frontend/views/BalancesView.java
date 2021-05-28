@@ -5,6 +5,7 @@ import com.vaadin.database.data.service.AddressService;
 import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.CallerService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.AddressForm;
 import com.vaadin.database.frontend.forms.BalanceForm;
 import com.vaadin.flow.component.button.Button;
@@ -18,7 +19,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="balances", layout = MainView.class)
+@Route(value="balances", layout = QueryView.class)
 @PageTitle("balances")
 public class BalancesView extends VerticalLayout {
 

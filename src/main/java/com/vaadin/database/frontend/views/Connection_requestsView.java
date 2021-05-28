@@ -5,6 +5,7 @@ import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Connection_requests;
 import com.vaadin.database.data.service.*;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.Connection_requestsForm;
 import com.vaadin.flow.component.button.Button;
@@ -16,7 +17,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="connect_requests", layout = MainView.class)
+@Route(value="connect_requests", layout = QueryView.class)
 @PageTitle("connect requests")
 public class Connection_requestsView extends VerticalLayout {
 

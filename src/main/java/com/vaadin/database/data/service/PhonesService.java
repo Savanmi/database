@@ -16,6 +16,11 @@ public class PhonesService {
         return phonesRepository.findPhonesList(street, blocked);
     }
 
+    public     List<Object[]> findPairedPhones(){
+        return phonesRepository.findPairedPhones();
+    };
+
+
     public PhonesService(PhonesRepository phonesRepository){
         this.phonesRepository = phonesRepository;
     }

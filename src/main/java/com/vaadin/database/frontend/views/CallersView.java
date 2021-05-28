@@ -8,6 +8,7 @@ import com.vaadin.database.data.service.CallerService;
 import com.vaadin.database.data.service.ClientsService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.AddressForm;
 import com.vaadin.database.frontend.forms.BalanceForm;
 import com.vaadin.database.frontend.forms.CallerForm;
@@ -20,7 +21,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value="callers", layout = MainView.class)
+@Route(value="callers", layout = QueryView.class)
 @PageTitle("callers")
 public class CallersView extends VerticalLayout {
 

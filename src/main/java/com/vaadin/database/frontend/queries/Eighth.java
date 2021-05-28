@@ -3,6 +3,7 @@ package com.vaadin.database.frontend.queries;
 import com.vaadin.database.data.service.CallerService;
 import com.vaadin.database.data.service.PhonesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.grid.Grid;
@@ -17,7 +18,7 @@ import com.vaadin.flow.router.Route;
 import java.util.Collections;
 import java.util.List;
 
-@Route(value = "query_8", layout = MainView.class)
+@Route(value = "query_8", layout = QueryView.class)
 @PageTitle("Query №8")
 public class Eighth extends VerticalLayout {
     private PhonesService phonesService;
@@ -29,7 +30,7 @@ public class Eighth extends VerticalLayout {
         this.grid = new Grid<>();
 
         configureGrid();
-        add(new H3("Получить Получить перечень телефонов"), getToolBar(), grid);
+        add(new H3("Получить перечень телефонов"), getToolBar(), grid);
         setSizeFull();
     }
 

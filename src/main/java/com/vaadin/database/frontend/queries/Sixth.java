@@ -3,6 +3,7 @@ package com.vaadin.database.frontend.queries;
 import com.vaadin.database.data.service.ClientsService;
 import com.vaadin.database.data.service.Public_phonesService;
 import com.vaadin.database.frontend.MainView;
+import com.vaadin.database.frontend.QueryView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
@@ -16,7 +17,7 @@ import com.vaadin.flow.router.Route;
 import java.util.Collections;
 import java.util.List;
 
-@Route(value = "query_6", layout = MainView.class)
+@Route(value = "query_6", layout = QueryView.class)
 @PageTitle("Query №6")
 public class Sixth extends VerticalLayout {
     private ClientsService clientsService;

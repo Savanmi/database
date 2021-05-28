@@ -3,14 +3,21 @@ package com.vaadin.database.data.service;
 import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Long_distance_calls;
 import com.vaadin.database.data.repository.Long_distance_callsRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class Long_distance_callsService {
 
     private Long_distance_callsRepository long_distance_callsRepository;
+
+    public     List<Object[]> FindPhonesList(Integer callsCount, LocalDateTime firstDate, LocalDateTime secondDate){
+        return long_distance_callsRepository.FindPhonesList(callsCount, firstDate,secondDate);
+    };
+
 
     public     List<Object[]> findTownWithMaxCalls(){
         return long_distance_callsRepository.findTownWithMaxCalls();
