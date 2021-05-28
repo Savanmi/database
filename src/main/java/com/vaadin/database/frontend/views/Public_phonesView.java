@@ -1,26 +1,17 @@
 package com.vaadin.database.frontend.views;
 
-import com.vaadin.database.data.entity.Balances;
-import com.vaadin.database.data.entity.Phone_numbers;
 import com.vaadin.database.data.entity.Public_phones;
-import com.vaadin.database.data.entity.Telephone_exchanges;
 import com.vaadin.database.data.service.AddressService;
-import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Public_phonesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
-import com.vaadin.database.frontend.forms.Phone_numbersForm;
 import com.vaadin.database.frontend.forms.Public_phonesForm;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.IntegerField;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 

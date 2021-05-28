@@ -1,14 +1,8 @@
 package com.vaadin.database.frontend.views;
 
-import com.vaadin.database.data.entity.Balances;
-import com.vaadin.database.data.entity.Connection_prices;
 import com.vaadin.database.data.entity.Long_distance_call_prices;
-import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Long_distance_call_pricesService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
-import com.vaadin.database.frontend.forms.Connection_pricesForm;
-import com.vaadin.database.frontend.forms.LdcForm;
 import com.vaadin.database.frontend.forms.Ldc_pricesForm;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;

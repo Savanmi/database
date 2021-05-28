@@ -1,8 +1,6 @@
 package com.vaadin.database.frontend.queries;
 
 import com.vaadin.database.data.service.CallerService;
-import com.vaadin.database.data.service.Public_phonesService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;

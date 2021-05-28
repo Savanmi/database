@@ -1,17 +1,11 @@
 package com.vaadin.database.frontend.views;
 
-import com.vaadin.database.data.entity.Balances;
 import com.vaadin.database.data.entity.Installing_possibilities;
-import com.vaadin.database.data.entity.Long_distance_call_prices;
 import com.vaadin.database.data.service.AddressService;
-import com.vaadin.database.data.service.BalancesService;
 import com.vaadin.database.data.service.Installing_possibilitiesService;
 import com.vaadin.database.data.service.Telephone_exchangesService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
-import com.vaadin.database.frontend.forms.Connection_pricesForm;
 import com.vaadin.database.frontend.forms.Installing_possibilitiesForm;
-import com.vaadin.database.frontend.forms.Ldc_pricesForm;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;

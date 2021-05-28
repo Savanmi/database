@@ -15,7 +15,7 @@ import com.vaadin.flow.router.RouterLink;
 
 import java.awt.*;
 
-@Route(value="queries")
+@Route("")
 @PageTitle("queries")
 public class QueryView extends AppLayout {
     private MenuBar menuBar = new MenuBar();

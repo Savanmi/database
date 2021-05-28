@@ -208,7 +208,6 @@
                     <flyway.user>root</flyway.user>
                     <flyway.password>root</flyway.password>
                     <flyway.schemas>bd_gts</flyway.schemas>
-                    ...
                 <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
 

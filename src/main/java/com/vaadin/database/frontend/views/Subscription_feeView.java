@@ -1,12 +1,9 @@
 package com.vaadin.database.frontend.views;
 
-import com.vaadin.database.data.entity.Public_phones;
 import com.vaadin.database.data.entity.Subscription_fees;
 import com.vaadin.database.data.service.Phone_typesService;
 import com.vaadin.database.data.service.Subscription_feesService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
-import com.vaadin.database.frontend.forms.Public_phonesForm;
 import com.vaadin.database.frontend.forms.Subscription_feeForm;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;

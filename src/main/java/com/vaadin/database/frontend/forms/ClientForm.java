@@ -14,11 +14,13 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.validator.DateRangeValidator;
 import com.vaadin.flow.shared.Registration;
 import com.vaadin.flow.component.textfield.TextField;
 
 
 import java.awt.*;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ClientForm extends FormLayout {
@@ -38,7 +40,7 @@ public class ClientForm extends FormLayout {
     Button close = new Button("Отмена");
 
     Binder<Clients> binder = new BeanValidationBinder<>(Clients.class);
-
+    Clients clients;
 
 
     public ClientForm(List<Clients> all) {
@@ -47,7 +49,13 @@ public class ClientForm extends FormLayout {
         gender.setItems("M","F");
 
 
-
+        binder.forField(birth_date)
+                .withValidator(new DateRangeValidator(
+                        "Date of birth must be between 1900-01-01 and 2021-01-01",
+                        LocalDate.of(1900, 1, 1),
+                        LocalDate.of(2021, 1, 1)))
+                .bind(Clients::getBirth_date, Clients::setBirth_date);
+        binder.setBean(clients);
         binder.bindInstanceFields(this);
 
 

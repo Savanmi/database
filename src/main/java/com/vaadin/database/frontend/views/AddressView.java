@@ -2,7 +2,6 @@ package com.vaadin.database.frontend.views;
 
 import com.vaadin.database.data.entity.Address;
 import com.vaadin.database.data.service.AddressService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
 import com.vaadin.database.frontend.forms.AddressForm;
 import com.vaadin.flow.component.button.Button;

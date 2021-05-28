@@ -1,13 +1,10 @@
 package com.vaadin.database.frontend.queries;
 
 import com.vaadin.database.data.service.CallerService;
-import com.vaadin.database.data.service.Phone_numbersService;
-import com.vaadin.database.frontend.MainView;
 import com.vaadin.database.frontend.QueryView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.router.PageTitle;

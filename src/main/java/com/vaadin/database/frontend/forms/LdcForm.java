@@ -1,5 +1,6 @@
 package com.vaadin.database.frontend.forms;
 
+import com.vaadin.database.data.entity.Clients;
 import com.vaadin.database.data.entity.Long_distance_call_prices;
 import com.vaadin.database.data.entity.Long_distance_calls;
 import com.vaadin.database.data.entity.Phones;
@@ -15,8 +16,12 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.validator.DateRangeValidator;
+import com.vaadin.flow.data.validator.DateTimeRangeValidator;
 import com.vaadin.flow.shared.Registration;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class LdcForm extends FormLayout {
@@ -33,6 +38,7 @@ public class LdcForm extends FormLayout {
     Button close = new Button("Отмена");
 
     Binder<Long_distance_calls> binder = new BeanValidationBinder<>(Long_distance_calls.class);
+    Long_distance_calls long_distance_calls;
 
 
     public LdcForm(List<Phones> phones) {
@@ -43,6 +49,11 @@ public class LdcForm extends FormLayout {
 
         destination_phone_ID.setItems(phones);
         destination_phone_ID.setItemLabelGenerator(Phones::getIdStr);
+
+        binder.forField(end_date)
+                .withValidator(new DateTimeRangeValidator("Date of birth must be between 1900-01-01 and 2021-01-01", start_date.getValue(), LocalDateTime.now()))
+                .bind(Long_distance_calls::getEnd_date, Long_distance_calls::setEnd_date);
+        binder.setBean(long_distance_calls);
 
         binder.bindInstanceFields(this);
 

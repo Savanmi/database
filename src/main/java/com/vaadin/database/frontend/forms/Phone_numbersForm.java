@@ -16,6 +16,7 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.validator.RegexpValidator;
 import com.vaadin.flow.shared.Registration;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class Phone_numbersForm extends FormLayout {
     Button close = new Button("Отмена");
 
     Binder<Phone_numbers> binder = new BeanValidationBinder<>(Phone_numbers.class);
+    Phone_numbers phone_numbers;
 
 
     public Phone_numbersForm(List<Phones> phones, List<Telephone_exchanges> telephone_exchanges) {
@@ -43,6 +45,11 @@ public class Phone_numbersForm extends FormLayout {
 
         phone.setItems(phones);
         phone.setItemLabelGenerator(Phones::getIdStr);
+        binder.forField(phone_number)
+                .withValidator(new RegexpValidator("Not a valid phone number",
+                        "^((8|\\+7)[\\- ]?)?(\\(?\\d{3}\\)?[\\- ]?)?[\\d\\- ]{7,10}$"))
+                .bind(Phone_numbers::getPhone_number, Phone_numbers::setPhone_number);
+        binder.setBean(phone_numbers);
 
         binder.bindInstanceFields(this);
 
